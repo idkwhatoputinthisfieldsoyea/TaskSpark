@@ -1,0 +1,19 @@
+"use client";
+
+import React from "react";
+
+export default function GlobalError({ error }: { error: Error }) {
+  console.error(error);
+  return (
+    <html>
+      <body>
+        <div className="min-h-screen flex items-center justify-center bg-black text-white">
+          <div className="max-w-xl p-8 bg-gray-900/70 border border-gray-800 rounded-lg">
+            <h1 className="text-2xl font-bold mb-2">Something went wrong</h1>
+            <p className="text-sm text-gray-300">An unexpected error occurred. Please try again later.</p>
+          </div>
+        </div>
+      </body>
+    </html>
+  );
+}
