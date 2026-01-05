@@ -2,6 +2,8 @@ import { auth } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 import { createServerClient } from "@/lib/supabase";
 
+export const dynamic = "force-dynamic";
+
 export async function PATCH(
   request: Request,
   { params }: { params: { id: string } }
@@ -10,6 +12,12 @@ export async function PATCH(
     const { userId } = await auth();
     if (!userId) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
+
+    // runtime env checks before initializing server client
+    if (!process.env.SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) {
+      console.error("Missing SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY environment variables");
+      return NextResponse.json({ error: "Server misconfiguration" }, { status: 500 });
     }
 
     const supabase = createServerClient();

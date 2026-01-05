@@ -4,6 +4,7 @@ import { createServerClient } from "@/lib/supabase";
 import DashboardLayout from "@/components/layout/DashboardLayout";
 import { formatDate } from "@/lib/utils";
 
+export const dynamic = "force-dynamic";
 export default async function ApplicantsIndexPage() {
   const user = await currentUser();
 

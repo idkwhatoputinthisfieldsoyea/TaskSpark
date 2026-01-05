@@ -4,13 +4,14 @@ import { useEffect, useState, useCallback } from "react";
 import { Job } from "@/types/database";
 import JobCard from "@/components/shared/JobCard";
 import Link from "next/link";
-import { supabase } from "@/lib/supabase";
+import { getBrowserClient } from "@/lib/supabase";
 
 interface JobManagementProps {
   recruiterId: string;
 }
 
 export default function JobManagement({ recruiterId }: JobManagementProps) {
+  const supabase = getBrowserClient();
   const [jobs, setJobs] = useState<Job[]>([]);
   const [loading, setLoading] = useState(true);
   // applicant counts state

@@ -3,9 +3,10 @@
 import { useEffect, useState } from "react";
 import { Job } from "@/types/database";
 import JobCard from "@/components/shared/JobCard";
-import { supabase } from "@/lib/supabase";
+import { getBrowserClient } from "@/lib/supabase";
 
 export default function JobFeed() {
+  const supabase = getBrowserClient();
   const [jobs, setJobs] = useState<Job[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");

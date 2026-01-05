@@ -4,6 +4,7 @@ import { createServerClient } from "@/lib/supabase";
 import CreateJobForm from "@/components/recruiter/CreateJobForm";
 import DashboardLayout from "@/components/layout/DashboardLayout";
 
+export const dynamic = "force-dynamic";
 export default async function CreateJobPage() {
   const user = await currentUser();
   

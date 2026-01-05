@@ -4,6 +4,7 @@ import { createServerClient } from "@/lib/supabase";
 import MessagesView from "@/components/shared/MessagesView";
 import DashboardLayout from "@/components/layout/DashboardLayout";
 
+export const dynamic = "force-dynamic";
 export default async function MessagesPage({
   searchParams,
 }: {

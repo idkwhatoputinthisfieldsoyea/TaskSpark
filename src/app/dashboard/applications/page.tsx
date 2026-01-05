@@ -4,6 +4,7 @@ import { createServerClient } from "@/lib/supabase";
 import ApplicationList from "@/components/student/ApplicationList";
 import DashboardLayout from "@/components/layout/DashboardLayout";
 
+export const dynamic = "force-dynamic";
 export default async function ApplicationsPage() {
   const user = await currentUser();
   

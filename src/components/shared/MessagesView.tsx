@@ -3,7 +3,7 @@
 import { useEffect, useState, useRef, useCallback } from "react";
 import { Message, Profile } from "@/types/database";
 import { formatDate } from "@/lib/utils";
-import { supabase } from "@/lib/supabase";
+import { getBrowserClient } from "@/lib/supabase";
 
 interface MessagesViewProps {
   profileId: string;
@@ -21,6 +21,8 @@ export default function MessagesView({
   receiverId,
   jobId,
 }: MessagesViewProps) {
+  // client-side Supabase instance
+  const supabase = getBrowserClient();
   const [messages, setMessages] = useState<MessageWithUsers[]>([]);
   const [loading, setLoading] = useState(true);
   const [newMessage, setNewMessage] = useState("");

@@ -4,6 +4,7 @@ import { createServerClient } from "@/lib/supabase";
 import StudentDashboard from "@/components/dashboards/StudentDashboard";
 import RecruiterDashboard from "@/components/dashboards/RecruiterDashboard";
 
+export const dynamic = "force-dynamic";
 export default async function DashboardPage() {
   const user = await currentUser();
   
