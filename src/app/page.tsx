@@ -28,7 +28,7 @@ export default async function Home() {
             <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-purple-600 to-indigo-500 flex items-center justify-center shadow-lg">
               <span className="text-white font-bold">TS</span>
             </div>
-            <span className="text-white font-semibold text-lg">Techspark</span>
+            <span className="text-white font-semibold text-lg">Taskspark</span>
           </Link>
 
           <div className="hidden md:flex items-center gap-6">
@@ -48,7 +48,7 @@ export default async function Home() {
                 Launch your career with curated student opportunities
               </h2>
               <p className="text-gray-300 text-lg max-w-xl">
-                Techspark connects ambitious students with internships, part-time roles and projects at vetted companies — faster and smarter.
+                Taskspark connects ambitious students with internships, part-time roles and projects at vetted companies — faster and smarter.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mt-6">
@@ -97,7 +97,7 @@ export default async function Home() {
           </section>
 
           <section className="py-12">
-            <h3 className="text-2xl font-bold mb-6">Why students love Techspark</h3>
+            <h3 className="text-2xl font-bold mb-6">Why students love Taskspark</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="p-6 bg-white/5 rounded-lg">
                 <h4 className="font-semibold">Personalized matches</h4>
@@ -125,7 +125,7 @@ export default async function Home() {
 
           <footer className="py-12 border-t border-gray-800 mt-12 text-gray-400">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <div>© {new Date().getFullYear()} Techspark</div>
+              <div>© {new Date().getFullYear()} Taskspark</div>
               <div className="flex gap-4">
                 <Link href="/about-team" className="hover:text-white">About</Link>
                 <Link href="/why-us" className="hover:text-white">Privacy</Link>
@@ -136,7 +136,7 @@ export default async function Home() {
         </div>
 
         <div className="pointer-events-none mt-16">
-          <ScrollingText text="#1 student hiring platform • Techspark" speed={60} />
+          <ScrollingText text="#1 student hiring platform • Taskspark" speed={60} />
         </div>
       </main>
     </>

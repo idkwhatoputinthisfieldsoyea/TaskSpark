@@ -1,4 +1,4 @@
-# Techspark
+# Taskspark
 
 A modern job platform connecting students with recruiters and opportunities. Built with Next.js, TypeScript, Clerk authentication, and Supabase.
 

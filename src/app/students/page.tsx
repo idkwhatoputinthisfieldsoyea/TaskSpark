@@ -34,7 +34,7 @@ export default function StudentSignUpPage() {
       {/* Header */}
       <header className="relative z-10 px-6 py-6 border-b border-gray-800">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="text-3xl font-bold tracking-wider text-white">TECHSPARK</div>
+          <div className="text-3xl font-bold tracking-wider text-white">TASKSPARK</div>
           <nav className="hidden md:flex space-x-8">
             <a href="#features" className="text-gray-300 hover:text-green-400 transition-colors duration-300 font-medium">Features</a>
             <a href="#about" className="text-gray-300 hover:text-green-400 transition-colors duration-300 font-medium">About</a>
@@ -175,8 +175,8 @@ export default function StudentSignUpPage() {
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-slate-300 to-cyan-400 bg-clip-text text-transparent font-['Roboto']">
             Ready to Start Your Journey?
           </h2>
-          <p className="text-xl text-slate-400 mb-8">
-            Join thousands of students who have launched successful tech careers with Techspark.
+            <p className="text-xl text-slate-400 mb-8">
+            Join thousands of students who have launched successful tech careers with Taskspark.
           </p>
           <Link
             href="/sign-up-student"
@@ -191,7 +191,7 @@ export default function StudentSignUpPage() {
       <footer className="relative px-6 py-8 border-t border-gray-800">
         <div className="max-w-7xl mx-auto text-center">
           <p className="text-gray-400">
-            © 2025 Techspark. Empowering the next generation of tech talent.
+            © 2025 Taskspark. Empowering the next generation of tech talent.
           </p>
         </div>
       </footer>

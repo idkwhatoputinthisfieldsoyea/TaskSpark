@@ -9,7 +9,7 @@ export default function WhyUs() {
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <Link href="/" className="text-xl font-bold text-white">
-                Techspark
+                Taskspark
               </Link>
             </div>
             <div className="flex space-x-8">
@@ -29,7 +29,7 @@ export default function WhyUs() {
 
       {/* Page Content */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <h1 className="text-4xl font-bold text-center mb-8">Why Choose Techspark?</h1>
+        <h1 className="text-4xl font-bold text-center mb-8">Why Choose Taskspark?</h1>
         <p className="text-xl text-gray-300 text-center mb-12">
           Discover what makes us the premier platform for student hiring.
         </p>

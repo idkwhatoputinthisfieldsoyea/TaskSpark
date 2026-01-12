@@ -35,7 +35,7 @@ export default function RecruiterSignUpPage() {
       <header className="relative z-10 px-6 py-4 border-b border-gray-800">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <Link href="/" className="text-2xl font-bold text-white font-['Roboto']">
-            Techspark
+            Taskspark
           </Link>
           <Link
             href="/sign-in"
@@ -205,9 +205,9 @@ export default function RecruiterSignUpPage() {
             Ready to Build
             <span className="block text-green-400">Your Team?</span>
           </h2>
-          <p className="text-xl text-gray-300 mb-8">
-            Join leading companies who trust Techspark to find their next great hire.
-          </p>
+            <p className="text-xl text-gray-300 mb-8">
+              Join leading companies who trust Taskspark to find their next great hire.
+            </p>
           <Link
             href="/sign-up-recruiter"
             className="inline-block px-12 py-4 bg-green-600 hover:bg-green-500 text-white font-bold text-xl rounded-lg transition-all duration-300 shadow-xl hover:shadow-green-500/30 transform hover:scale-105 cursor-pointer border-2 border-green-500"
@@ -220,8 +220,8 @@ export default function RecruiterSignUpPage() {
       {/* Footer */}
       <footer className="relative px-6 py-8 border-t border-gray-800">
         <div className="max-w-7xl mx-auto text-center">
-          <p className="text-gray-400">
-            © 2025 Techspark. Connecting companies with exceptional tech talent.
+            <p className="text-gray-400">
+            © 2025 Taskspark. Connecting companies with exceptional tech talent.
           </p>
         </div>
       </footer>

@@ -2,6 +2,9 @@ import { auth } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 import { createServerClient } from "@/lib/supabase";
 
+// This route reads request headers via `auth()` and must be dynamic.
+export const dynamic = 'force-dynamic';
+
 export async function GET(request: Request) {
   try {
     const { userId } = await auth();

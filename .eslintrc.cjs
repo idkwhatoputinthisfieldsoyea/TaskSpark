@@ -1,0 +1,15 @@
+module.exports = {
+  root: true,
+  extends: [
+    "next/core-web-vitals",
+    "eslint:recommended"
+  ],
+  env: {
+    browser: true,
+    es2021: true,
+    node: true
+  },
+  rules: {
+    "react/react-in-jsx-scope": "off"
+  }
+};

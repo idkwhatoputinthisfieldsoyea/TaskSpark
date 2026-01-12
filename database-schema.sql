@@ -1,10 +1,6 @@
--- Techspark Database Schema
--- Run this in your Supabase SQL editor
 
--- Enable UUID extension
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
--- User Profiles Table (extends Clerk user data)
 CREATE TABLE profiles (
   id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
   clerk_user_id TEXT UNIQUE NOT NULL,
@@ -15,7 +11,7 @@ CREATE TABLE profiles (
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 
--- Student Profiles Table
+
 CREATE TABLE student_profiles (
   id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
   profile_id UUID REFERENCES profiles(id) ON DELETE CASCADE UNIQUE NOT NULL,
@@ -44,7 +40,7 @@ CREATE TABLE jobs (
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 
--- Applications Table
+
 CREATE TABLE applications (
   id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
   job_id UUID REFERENCES jobs(id) ON DELETE CASCADE NOT NULL,

@@ -10,7 +10,7 @@ export default function Careers() {
             {/* Logo */}
             <div className="flex items-center">
               <Link href="/" className="text-2xl font-bold text-white hover:text-gray-300 transition-colors">
-                Techspark
+                Taskspark
               </Link>
             </div>
 
@@ -78,7 +78,7 @@ export default function Careers() {
 
       {/* Page Content */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <h1 className="text-4xl font-bold text-center mb-8">Careers at Techspark</h1>
+        <h1 className="text-4xl font-bold text-center mb-8">Careers at Taskspark</h1>
         <p className="text-xl text-gray-300 text-center mb-12">
           Join our team and help shape the future of student hiring.
         </p>

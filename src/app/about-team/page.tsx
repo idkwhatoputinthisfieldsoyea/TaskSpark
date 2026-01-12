@@ -9,7 +9,7 @@ export default function AboutTeam() {
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <Link href="/" className="text-xl font-bold text-white">
-                Techspark
+                Taskspark
               </Link>
             </div>
             <div className="flex space-x-8">
@@ -31,7 +31,7 @@ export default function AboutTeam() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <h1 className="text-4xl font-bold text-center mb-8">About Our Team</h1>
         <p className="text-xl text-gray-300 text-center mb-12">
-          Meet the passionate individuals behind Techspark.
+          Meet the passionate individuals behind Taskspark.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -42,7 +42,7 @@ export default function AboutTeam() {
             <h3 className="text-xl font-semibold mb-2">Aydin Rizzqi</h3>
             <p className="text-gray-400">CEO & Founder</p>
             <p className="text-sm text-gray-500 mt-2">
-              Leading the vision and strategy for Techspark&apos;s future.
+              Leading the vision and strategy for Taskspark&apos;s future.
             </p>
           </div>
 

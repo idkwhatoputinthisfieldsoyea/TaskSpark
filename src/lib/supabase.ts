@@ -24,8 +24,13 @@ export function getBrowserClient(): SupabaseClient {
   return globalThis.__supabaseBrowserClient as SupabaseClient;
 }
 
-// Server-side client with service role key (for admin operations)
-export function createServerClient(): SupabaseClient {
+// Lazy server client - only creates the actual client when a method is called
+// This prevents build-time errors when env vars aren't available
+let _lazyServerClient: SupabaseClient | null = null;
+
+function getActualServerClient(): SupabaseClient {
+  if (_lazyServerClient) return _lazyServerClient;
+  
   const supabaseUrl = process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL;
   const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
@@ -43,6 +48,24 @@ export function createServerClient(): SupabaseClient {
     });
   }
 
-  return globalThis.__supabaseServiceClient as SupabaseClient;
+  _lazyServerClient = globalThis.__supabaseServiceClient as SupabaseClient;
+  return _lazyServerClient;
+}
+
+// Server-side client with service role key (for admin operations)
+// Returns a proxy that lazily initializes the client only when actually used
+export function createServerClient(): SupabaseClient {
+  // Return a proxy that forwards all calls to the actual client
+  // This allows the function to be called during build without throwing
+  return new Proxy({} as SupabaseClient, {
+    get(_target, prop) {
+      const client = getActualServerClient();
+      const value = (client as any)[prop];
+      if (typeof value === 'function') {
+        return value.bind(client);
+      }
+      return value;
+    },
+  });
 }
 
