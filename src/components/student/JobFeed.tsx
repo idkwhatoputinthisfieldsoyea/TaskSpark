@@ -92,7 +92,7 @@ export default function JobFeed() {
   const filteredJobs = jobs.filter((job) => job.status === "active");
 
   if (loading) {
-    return <div className="text-center text-gray-400">Loading jobs...</div>;
+    return <div className="text-center text-slate-600">Loading jobs...</div>;
   }
 
   return (
@@ -103,20 +103,20 @@ export default function JobFeed() {
           placeholder="Search jobs..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="flex-1 px-4 py-2 bg-dark-surface border border-dark-border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-600"
+          className="flex-1 px-4 py-2 bg-dark-surface border border-dark-border rounded-lg text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-600"
         />
         <input
           type="text"
           placeholder="Filter by skill..."
           value={skillFilter}
           onChange={(e) => setSkillFilter(e.target.value)}
-          className="flex-1 px-4 py-2 bg-dark-surface border border-dark-border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-600"
+          className="flex-1 px-4 py-2 bg-dark-surface border border-dark-border rounded-lg text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-600"
         />
       </div>
 
       <div className="space-y-4">
         {filteredJobs.length === 0 ? (
-          <div className="text-center text-gray-400 py-12">
+          <div className="text-center text-slate-600 py-12">
             No jobs found. Try adjusting your search filters.
           </div>
         ) : (
@@ -126,7 +126,7 @@ export default function JobFeed() {
         )}
       </div>
       <div className="flex items-center justify-between mt-4">
-        <div className="text-sm text-gray-400">Showing {(page-1)*20 + 1} - {Math.min(page*20, total)} of {total}</div>
+        <div className="text-sm text-slate-600">Showing {(page-1)*20 + 1} - {Math.min(page*20, total)} of {total}</div>
         <div className="flex gap-2">
           <button onClick={() => setPage((p) => Math.max(1, p-1))} className="px-3 py-1 bg-dark-border rounded">Prev</button>
           <button onClick={() => setPage((p) => p+1)} className="px-3 py-1 bg-dark-border rounded">Next</button>

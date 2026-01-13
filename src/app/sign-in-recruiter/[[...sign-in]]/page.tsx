@@ -2,37 +2,37 @@ import { SignIn } from "@clerk/nextjs";
 
 export default function RecruiterSignInPage() {
   return (
-    <div className="min-h-screen flex items-center justify-center p-8 bg-dark-bg">
+    <div className="min-h-screen flex items-center justify-center p-8 bg-white">
       <div className="w-full max-w-md">
-        <h1 className="text-3xl font-bold text-center mb-6 text-purple-400">Sign In - Companies</h1>
+        <h1 className="text-3xl font-bold text-center mb-6 text-blue-600">Sign In - Companies</h1>
         <SignIn 
           appearance={{
             variables: {
-              colorText: "#ffffff",
-              colorTextSecondary: "#d1d5db",
-              colorInputText: "#ffffff",
-              colorBackground: "#111111",
-              colorInputBackground: "#0a0a0a",
-              colorPrimary: "#9333ea",
+              colorText: "#0f172a",
+              colorTextSecondary: "#475569",
+              colorInputText: "#0f172a",
+              colorBackground: "#ffffff",
+              colorInputBackground: "#ffffff",
+              colorPrimary: "#2563eb",
             },
             elements: {
               rootBox: "mx-auto",
-              card: "bg-dark-surface border-dark-border",
-              headerTitle: "text-purple-400",
-              headerSubtitle: "text-gray-300",
-              socialButtonsBlockButton: "bg-dark-surface border-dark-border hover:bg-dark-border text-white",
-              formButtonPrimary: "bg-purple-600 hover:bg-purple-700 text-white",
-              footerActionLink: "text-purple-400 hover:text-purple-300",
-              formFieldLabel: "text-gray-300",
-              formFieldInput: "bg-dark-bg border-dark-border text-white",
-              identityPreviewText: "text-white",
-              identityPreviewEditButton: "text-purple-400",
-              formResendCodeLink: "text-purple-400",
-              footerPagesLink: "text-gray-300",
-              dividerLine: "bg-dark-border",
-              dividerText: "text-gray-400",
-              alertText: "text-gray-300",
-              formFieldErrorText: "text-red-400",
+              card: "bg-white border border-slate-200",
+              headerTitle: "text-blue-600",
+              headerSubtitle: "text-slate-600",
+              socialButtonsBlockButton: "bg-white border border-slate-200 hover:bg-slate-50 text-slate-900",
+              formButtonPrimary: "bg-blue-600 hover:bg-blue-700 text-white",
+              footerActionLink: "text-blue-600 hover:text-blue-700",
+              formFieldLabel: "text-slate-600",
+              formFieldInput: "bg-white border border-slate-300 text-slate-900",
+              identityPreviewText: "text-slate-900",
+              identityPreviewEditButton: "text-blue-600",
+              formResendCodeLink: "text-blue-600",
+              footerPagesLink: "text-slate-600",
+              dividerLine: "bg-slate-200",
+              dividerText: "text-slate-500",
+              alertText: "text-slate-600",
+              formFieldErrorText: "text-red-600",
             },
           }}
           afterSignInUrl="/dashboard"

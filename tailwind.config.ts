@@ -8,6 +8,16 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: '1.5rem',
+          sm: '2rem',
+          lg: '2rem',
+          xl: '2rem',
+          '2xl': '2.5rem',
+        },
+      },
       colors: {
         primary: {
           50: '#f3e8ff',
@@ -22,9 +32,9 @@ const config: Config = {
           900: '#4c1d95',
         },
         dark: {
-          bg: '#0a0a0a',
-          surface: '#111111',
-          border: '#1f1f1f',
+          bg: '#ffffff',
+          surface: '#ffffff',
+          border: '#e5e7eb',
         }
       },
     },

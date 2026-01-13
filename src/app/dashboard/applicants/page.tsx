@@ -56,12 +56,12 @@ export default async function ApplicantsIndexPage() {
     <DashboardLayout role="recruiter">
       <div className="space-y-6">
         <div>
-          <h1 className="text-3xl font-bold text-white">Applicants</h1>
-          <p className="text-gray-400">All applicants for your open positions</p>
+          <h1 className="text-3xl font-bold text-slate-900">Applicants</h1>
+          <p className="text-slate-600">All applicants for your open positions</p>
         </div>
 
         {jobs && jobs.length === 0 && (
-          <div className="text-center text-gray-400 py-12">You have no jobs posted yet.</div>
+          <div className="text-center text-slate-500 py-12">You have no jobs posted yet.</div>
         )}
 
         <div className="space-y-6">
@@ -69,23 +69,23 @@ export default async function ApplicantsIndexPage() {
             <section key={job.id} className="bg-dark-surface border border-dark-border rounded-lg p-6">
               <div className="flex items-center justify-between mb-4">
                 <div>
-                  <h2 className="text-xl font-semibold text-white">{job.title}</h2>
-                  <p className="text-sm text-gray-400">{(grouped[job.id] || []).length} applicants</p>
+                  <h2 className="text-xl font-semibold text-slate-900">{job.title}</h2>
+                  <p className="text-sm text-slate-600">{(grouped[job.id] || []).length} applicants</p>
                 </div>
               </div>
 
               {(grouped[job.id] || []).length === 0 ? (
-                <p className="text-sm text-gray-400">No applicants yet.</p>
+                <p className="text-sm text-slate-600">No applicants yet.</p>
               ) : (
                 <div className="space-y-4">
                   {(grouped[job.id] || []).map((app: any) => (
                     <div key={app.id} className="flex items-center justify-between">
                       <div>
-                        <p className="font-semibold text-white">{app.student?.full_name || 'Unknown'}</p>
-                        <p className="text-sm text-gray-400">{app.student?.email}</p>
-                        <p className="text-sm text-gray-400">Applied {formatDate(app.created_at)}</p>
+                        <p className="font-semibold text-slate-900">{app.student?.full_name || 'Unknown'}</p>
+                        <p className="text-sm text-slate-600">{app.student?.email}</p>
+                        <p className="text-sm text-slate-500">Applied {formatDate(app.created_at)}</p>
                       </div>
-                      <div className="text-sm text-gray-300">{app.status}</div>
+                      <div className="text-sm text-slate-700">{app.status}</div>
                     </div>
                   ))}
                 </div>

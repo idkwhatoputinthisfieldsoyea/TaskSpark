@@ -26,7 +26,7 @@ export default async function CreateJobPage() {
   return (
     <DashboardLayout role="recruiter">
       <div className="max-w-3xl mx-auto">
-        <h1 className="text-3xl font-bold text-white mb-8">Create Job Posting</h1>
+        <h1 className="text-3xl font-bold text-slate-900 mb-8">Create Job Posting</h1>
         <CreateJobForm recruiterId={profile.id} />
       </div>
     </DashboardLayout>

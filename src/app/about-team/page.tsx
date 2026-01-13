@@ -2,24 +2,24 @@ import Link from "next/link";
 
 export default function AboutTeam() {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-white text-slate-900">
       {/* Navigation Bar */}
-      <nav className="bg-gray-900 border-b border-gray-700">
+      <nav className="bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
-              <Link href="/" className="text-xl font-bold text-white">
+              <Link href="/" className="text-xl font-bold text-slate-900">
                 Techspark
               </Link>
             </div>
             <div className="flex space-x-8">
-              <Link href="/careers" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/careers" className="text-slate-600 hover:text-slate-900 px-3 py-2 rounded-md text-sm font-medium">
                 Careers
               </Link>
-              <Link href="/about-team" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/about-team" className="text-slate-600 hover:text-slate-900 px-3 py-2 rounded-md text-sm font-medium">
                 About the Team
               </Link>
-              <Link href="/why-us" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/why-us" className="text-slate-600 hover:text-slate-900 px-3 py-2 rounded-md text-sm font-medium">
                 Why Us?
               </Link>
             </div>
@@ -30,7 +30,7 @@ export default function AboutTeam() {
       {/* Page Content */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <h1 className="text-4xl font-bold text-center mb-8">About Our Team</h1>
-        <p className="text-xl text-gray-300 text-center mb-12">
+        <p className="text-xl text-slate-600 text-center mb-12">
           Meet the passionate individuals behind Techspark.
         </p>
 
@@ -40,8 +40,8 @@ export default function AboutTeam() {
               AR
             </div>
             <h3 className="text-xl font-semibold mb-2">Aydin Rizzqi</h3>
-            <p className="text-gray-400">CEO & Founder</p>
-            <p className="text-sm text-gray-500 mt-2">
+            <p className="text-slate-600">CEO & Founder</p>
+            <p className="text-sm text-slate-500 mt-2">
               Leading the vision and strategy for Techspark&apos;s future.
             </p>
           </div>
@@ -51,8 +51,8 @@ export default function AboutTeam() {
               PS
             </div>
             <h3 className="text-xl font-semibold mb-2">Pranav Singh</h3>
-            <p className="text-gray-400">CTO</p>
-            <p className="text-sm text-gray-500 mt-2">
+            <p className="text-slate-600">CTO</p>
+            <p className="text-sm text-slate-500 mt-2">
               Driving technical innovation and platform development.
             </p>
           </div>
@@ -62,8 +62,8 @@ export default function AboutTeam() {
               PS
             </div>
             <h3 className="text-xl font-semibold mb-2">Pranav Singh</h3>
-            <p className="text-gray-400">Head of Design</p>
-            <p className="text-sm text-gray-500 mt-2">
+            <p className="text-slate-600">Head of Design</p>
+            <p className="text-sm text-slate-500 mt-2">
               Crafting beautiful and intuitive user experiences.
             </p>
           </div>
@@ -71,7 +71,7 @@ export default function AboutTeam() {
 
         <div className="mt-16 text-center">
           <h2 className="text-2xl font-semibold mb-4">Our Mission</h2>
-          <p className="text-gray-300 max-w-2xl mx-auto">
+          <p className="text-slate-600 max-w-2xl mx-auto">
             We&apos;re a passionate team led by Aydin Rizzqi, with Pranav Singh driving our technical vision
             and design excellence. Together, we&apos;re building the future of student hiring, connecting
             talented individuals with meaningful career opportunities.

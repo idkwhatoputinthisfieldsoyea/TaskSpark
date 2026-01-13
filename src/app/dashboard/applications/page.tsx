@@ -26,7 +26,7 @@ export default async function ApplicationsPage() {
   return (
     <DashboardLayout role="student">
       <div className="space-y-6">
-        <h1 className="text-3xl font-bold text-white">My Applications</h1>
+        <h1 className="text-3xl font-bold text-slate-900">My Applications</h1>
         <ApplicationList studentId={profile.id} />
       </div>
     </DashboardLayout>

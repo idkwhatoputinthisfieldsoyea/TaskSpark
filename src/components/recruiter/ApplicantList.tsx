@@ -55,12 +55,12 @@ export default function ApplicantList({ jobId }: ApplicantListProps) {
   };
 
   if (loading) {
-    return <div className="text-center text-gray-400">Loading applicants...</div>;
+    return <div className="text-center text-slate-500">Loading applicants...</div>;
   }
 
   if (applications.length === 0) {
     return (
-      <div className="text-center text-gray-400 py-12">
+      <div className="text-center text-slate-500 py-12">
         No applicants yet for this job posting.
       </div>
     );
@@ -75,22 +75,22 @@ export default function ApplicantList({ jobId }: ApplicantListProps) {
         >
           <div className="flex justify-between items-start mb-4">
             <div>
-              <h3 className="text-xl font-semibold text-white mb-1">
+              <h3 className="text-xl font-semibold text-slate-900 mb-1">
                 {(application.student as any)?.full_name || "Unknown"}
               </h3>
-              <p className="text-gray-400 text-sm">
+              <p className="text-slate-600 text-sm">
                 {(application.student as any)?.email}
               </p>
             </div>
             <span
               className={`px-3 py-1 rounded text-sm ${
                 application.status === "applied"
-                  ? "bg-blue-900/30 text-blue-300"
+                  ? "bg-blue-50 text-blue-700"
                   : application.status === "reviewed"
-                  ? "bg-yellow-900/30 text-yellow-300"
+                  ? "bg-yellow-50 text-yellow-700"
                   : application.status === "accepted"
-                  ? "bg-green-900/30 text-green-300"
-                  : "bg-red-900/30 text-red-300"
+                  ? "bg-green-50 text-green-700"
+                  : "bg-red-50 text-red-700"
               }`}
             >
               {application.status}
@@ -99,15 +99,15 @@ export default function ApplicantList({ jobId }: ApplicantListProps) {
 
           {application.cover_letter && (
             <div className="mb-4">
-              <h4 className="text-sm font-medium text-gray-300 mb-2">Cover Letter:</h4>
-              <p className="text-gray-400 text-sm whitespace-pre-wrap">
+              <h4 className="text-sm font-medium text-slate-700 mb-2">Cover Letter:</h4>
+              <p className="text-slate-600 text-sm whitespace-pre-wrap">
                 {application.cover_letter}
               </p>
             </div>
           )}
 
           <div className="flex justify-between items-center">
-            <span className="text-sm text-gray-400">
+            <span className="text-sm text-slate-500">
               Applied {formatDate(application.created_at)}
             </span>
             <div className="flex gap-2">
@@ -151,7 +151,7 @@ export default function ApplicantList({ jobId }: ApplicantListProps) {
               )}
               <a
                 href={`/dashboard/messages?receiver_id=${application.student_id}`}
-                className="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white text-sm rounded transition-colors"
+                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded transition-colors"
               >
                 Message
               </a>

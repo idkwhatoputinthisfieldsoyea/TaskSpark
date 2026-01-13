@@ -25,9 +25,9 @@ export default async function OnboardingPage({
   };
 
   return (
-    <div className="min-h-screen p-8 bg-dark-bg">
+    <div className="min-h-screen p-8 bg-white">
       <div className="max-w-2xl mx-auto">
-        <h1 className="text-4xl font-bold mb-8 text-purple-400">Complete Your Profile</h1>
+        <h1 className="text-4xl font-bold mb-8 text-slate-900">Complete Your Profile</h1>
         <OnboardingForm user={userData} preselectedRole={preselectedRole} />
       </div>
     </div>

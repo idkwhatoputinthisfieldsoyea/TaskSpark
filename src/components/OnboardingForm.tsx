@@ -55,7 +55,7 @@ export default function OnboardingForm({ user, preselectedRole = "student" }: On
   return (
     <form onSubmit={handleSubmit} className="space-y-6 bg-dark-surface p-8 rounded-lg border border-dark-border">
       <div>
-        <label className="block text-sm font-medium mb-2 text-gray-300">I am a:</label>
+        <label className="block text-sm font-medium mb-2 text-slate-700">I am a:</label>
         <div className="flex gap-4">
           <label className="flex items-center cursor-pointer">
             <input
@@ -65,7 +65,7 @@ export default function OnboardingForm({ user, preselectedRole = "student" }: On
               onChange={(e) => setRole(e.target.value as "student")}
               className="mr-2"
             />
-            <span className="text-gray-300">Student</span>
+            <span className="text-slate-700">Student</span>
           </label>
           <label className="flex items-center cursor-pointer">
             <input
@@ -75,7 +75,7 @@ export default function OnboardingForm({ user, preselectedRole = "student" }: On
               onChange={(e) => setRole(e.target.value as "recruiter")}
               className="mr-2"
             />
-            <span className="text-gray-300">Recruiter/Employer</span>
+            <span className="text-slate-700">Recruiter/Employer</span>
           </label>
         </div>
       </div>
@@ -83,7 +83,7 @@ export default function OnboardingForm({ user, preselectedRole = "student" }: On
       <button
         type="submit"
         disabled={loading}
-        className="w-full px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-colors disabled:opacity-50"
+        className="w-full px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors disabled:opacity-50"
       >
         {loading ? "Creating Profile..." : "Continue"}
       </button>
