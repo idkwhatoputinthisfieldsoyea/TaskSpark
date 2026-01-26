@@ -47,7 +47,7 @@ export default function Careers() {
             <div className="w-10 h-10 rounded-xl bg-slate-900 flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform">
               <span className="text-white font-bold italic">TS</span>
             </div>
-            <span className="text-slate-900 font-bold text-xl tracking-tighter uppercase">Techspark</span>
+            <span className="text-slate-900 font-bold text-xl tracking-tighter uppercase">TaskSpark</span>
           </Link>
 
           <div className="hidden md:flex items-center gap-8 text-xs font-black uppercase tracking-widest text-slate-500">
@@ -71,7 +71,7 @@ export default function Careers() {
           <h1 className="flex flex-col items-center">
             <span className="text-2xl md:text-4xl font-black text-slate-400 uppercase tracking-[0.2em] mb-4">Careers at</span>
             <span className="text-7xl md:text-[10vw] font-black text-slate-900 leading-[0.8] tracking-[-0.05em] uppercase">
-              <span className="text-transparent bg-clip-text bg-gradient-to-br from-blue-600 via-indigo-500 to-cyan-400">Techspark</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-br from-blue-600 via-indigo-500 to-cyan-400">TaskSpark</span>
             </span>
           </h1>
           <p className="mt-12 text-xl md:text-2xl text-slate-600 max-w-2xl mx-auto font-medium leading-relaxed">
@@ -147,7 +147,7 @@ export default function Careers() {
           </div>
         </section>
 
-        {/* Why work at Techspark? - Bento Style Props */}
+        {/* Why work at TaskSpark? - Bento Style Props */}
         <section className="py-24">
           <h2 className="text-center text-sm font-black uppercase tracking-[0.5em] text-slate-300 mb-20">The Why</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -170,7 +170,7 @@ export default function Careers() {
         {/* Footer */}
         <footer className="py-20 border-t border-slate-100 mt-12">
           <div className="flex flex-col md:flex-row justify-between items-center gap-12 text-slate-400 font-black uppercase text-[10px] tracking-widest">
-            <div>© {new Date().getFullYear()} Techspark Core</div>
+            <div>© {new Date().getFullYear()} TaskSpark Core</div>
             <div className="flex gap-10">
               <Link href="/about-team" className="hover:text-blue-600 cursor-pointer transition-colors">About</Link>
               <Link href="/why-us" className="hover:text-blue-600 cursor-pointer transition-colors">Privacy</Link>

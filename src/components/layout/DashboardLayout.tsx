@@ -35,7 +35,7 @@ export default function DashboardLayout({ children, role }: DashboardLayoutProps
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <Link href="/dashboard" className="text-2xl font-bold text-blue-600">
-                Techspark
+                TaskSpark
               </Link>
               <div className="ml-10 flex space-x-4">
                 {navItems.map((item) => (

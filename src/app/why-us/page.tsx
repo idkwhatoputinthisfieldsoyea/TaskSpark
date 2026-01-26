@@ -47,7 +47,7 @@ export default function WhyUs() {
             <div className="w-10 h-10 rounded-xl bg-slate-900 flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform">
               <span className="text-white font-bold italic">TS</span>
             </div>
-            <span className="text-slate-900 font-bold text-xl tracking-tighter uppercase">Techspark</span>
+            <span className="text-slate-900 font-bold text-xl tracking-tighter uppercase">TaskSpark</span>
           </Link>
 
           <div className="hidden md:flex items-center gap-8 text-xs font-black uppercase tracking-widest text-slate-500">
@@ -75,7 +75,7 @@ export default function WhyUs() {
             </span>
           </h1>
           <p className="mt-12 text-xl md:text-2xl text-slate-500 max-w-2xl mx-auto font-medium leading-relaxed">
-            We aren't just another job board. Discover what makes Techspark the premier ecosystem for the next generation of builders.
+            We aren't just another job board. Discover what makes TaskSpark the premier ecosystem for the next generation of builders.
           </p>
           <div className="mt-12 flex flex-wrap justify-center gap-6">
             <Link href="/sign-up-student">
@@ -156,7 +156,7 @@ export default function WhyUs() {
         {/* Footer */}
         <footer className="py-20 border-t border-slate-100">
           <div className="flex flex-col md:flex-row justify-between items-center gap-12 text-slate-400 font-black uppercase text-[10px] tracking-widest">
-            <div>© {new Date().getFullYear()} Techspark Core</div>
+            <div>© {new Date().getFullYear()} TaskSpark Core</div>
             <div className="flex gap-10">
               <Link href="/about-team" className="hover:text-blue-600 cursor-pointer transition-colors">About</Link>
               <Link href="/why-us" className="hover:text-blue-600 cursor-pointer transition-colors">Privacy</Link>
@@ -166,7 +166,7 @@ export default function WhyUs() {
         </footer>
 
         <div className="mt-12 mb-12">
-          <ScrollingText text="THE SMART WAY TO HIRE • THE SMART WAY TO WORK • TECHSPARK •" speed={50} />
+          <ScrollingText text="THE SMART WAY TO HIRE • THE SMART WAY TO WORK • TASKSPARK •" speed={50} />
         </div>
       </main>
     </div>

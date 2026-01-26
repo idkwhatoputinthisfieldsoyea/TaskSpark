@@ -6,7 +6,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Techspark - Connect Students with Opportunities",
+  title: "TaskSpark - Connect Students with Opportunities",
   description: "A platform connecting students with recruiters and job opportunities",
 };
 

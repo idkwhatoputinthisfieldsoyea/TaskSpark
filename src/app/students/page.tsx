@@ -8,7 +8,7 @@ export default function StudentSignUpPage() {
       {/* Header */}
       <header className="relative z-10 px-6 py-6 border-b border-slate-200">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="text-3xl font-bold tracking-wider text-slate-900">TECHSPARK</div>
+          <div className="text-3xl font-bold tracking-wider text-slate-900">TASKSPARK</div>
           <nav className="hidden md:flex space-x-8">
             <a href="#features" className="text-slate-600 hover:text-blue-600 transition-colors duration-300 font-medium">Features</a>
             <a href="#about" className="text-slate-600 hover:text-blue-600 transition-colors duration-300 font-medium">About</a>
@@ -150,7 +150,7 @@ export default function StudentSignUpPage() {
             Ready to Start Your Journey?
           </h2>
           <p className="text-xl text-slate-600 mb-8">
-            Join thousands of students who have launched successful tech careers with Techspark.
+            Join thousands of students who have launched successful tech careers with TaskSpark.
           </p>
           <Link
             href="/sign-up-student"
@@ -165,7 +165,7 @@ export default function StudentSignUpPage() {
       <footer className="relative px-6 py-8 border-t border-slate-200">
         <div className="max-w-7xl mx-auto text-center">
           <p className="text-slate-600">
-            © 2025 Techspark. Empowering the next generation of tech talent.
+            © 2025 TaskSpark. Empowering the next generation of tech talent.
           </p>
         </div>
       </footer>

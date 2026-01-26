@@ -47,7 +47,7 @@ export default function Home() {
             <div className="w-10 h-10 rounded-xl bg-slate-900 flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform">
               <span className="text-white font-bold italic">TS</span>
             </div>
-            <span className="text-slate-900 font-bold text-xl tracking-tighter uppercase">Techspark</span>
+            <span className="text-slate-900 font-bold text-xl tracking-tighter uppercase">TaskSpark</span>
           </Link>
           <div className="hidden md:flex items-center gap-8 text-xs font-black uppercase tracking-widest text-slate-500">
             <Link href="/" className="text-slate-700 hover:text-slate-900">Home</Link>
@@ -108,7 +108,7 @@ export default function Home() {
 
       {/* BENTO GRID VALUE PROPS */}
       <section className="py-32 px-6 max-w-7xl mx-auto">
-        <h2 className="text-center text-sm font-black uppercase tracking-[0.5em] text-slate-300 mb-20">The Techspark Edge</h2>
+        <h2 className="text-center text-sm font-black uppercase tracking-[0.5em] text-slate-300 mb-20">The TaskSpark Edge</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="md:col-span-2 p-12 bg-blue-600 rounded-[3rem] text-white flex flex-col justify-end min-h-[400px] relative overflow-hidden group">
              <div className="relative z-10">
@@ -186,7 +186,7 @@ export default function Home() {
 
       {/* MARQUEE */}
       <section className="py-12 bg-white border-y border-slate-100 overflow-hidden cursor-default">
-        <ScrollingText text="#1 STUDENT HIRING PLATFORM • TECHSPARK • REAL EXPERIENCE •" speed={50} />
+        <ScrollingText text="#1 STUDENT HIRING PLATFORM • TASKSPARK • REAL EXPERIENCE •" speed={50} />
       </section>
 
       {/* FINAL CTA */}
@@ -204,7 +204,7 @@ export default function Home() {
       {/* FOOTER */}
       <footer className="py-20 bg-white border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-12 text-slate-400 font-black uppercase text-[10px] tracking-widest">
-          <div>© {new Date().getFullYear()} Techspark Core</div>
+          <div>© {new Date().getFullYear()} TaskSpark Core</div>
           <div className="flex gap-10">
             <Link href="/about" className="hover:text-blue-600 cursor-pointer">About</Link>
             <Link href="/privacy" className="hover:text-blue-600 cursor-pointer">Privacy</Link>

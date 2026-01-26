@@ -33,7 +33,7 @@ export default function AboutTeam() {
   const y2 = useTransform(scrollYProgress, [0, 1], [0, 300]);
 
   const team = [
-    { name: "Aydin Rizzqi", role: "CEO & Founder", initials: "AR", color: "from-blue-500 to-indigo-600", bio: "Leading the vision and strategy for Techspark's future." },
+    { name: "Aydin Rizzqi", role: "CEO & Founder", initials: "AR", color: "from-blue-500 to-indigo-600", bio: "Leading the vision and strategy for TaskSpark's future." },
     { name: "Pranav Singh", role: "CTO", initials: "PS", color: "from-cyan-500 to-blue-600", bio: "Driving technical innovation and platform development." },
     { name: "Pranav Singh", role: "Head of Design", initials: "PS", color: "from-indigo-500 to-purple-600", bio: "Crafting beautiful and intuitive user experiences." },
   ];
@@ -53,7 +53,7 @@ export default function AboutTeam() {
             <div className="w-10 h-10 rounded-xl bg-slate-900 flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform">
               <span className="text-white font-bold italic">TS</span>
             </div>
-            <span className="text-slate-900 font-bold text-xl tracking-tighter uppercase">Techspark</span>
+            <span className="text-slate-900 font-bold text-xl tracking-tighter uppercase">TaskSpark</span>
           </Link>
           <div className="hidden md:flex items-center gap-8 text-xs font-black uppercase tracking-widest text-slate-500">
             <Link href="/" className="hover:text-blue-600 transition-colors cursor-pointer">Home</Link>
@@ -141,7 +141,7 @@ export default function AboutTeam() {
         {/* Footer */}
         <footer className="py-20 border-t border-slate-100 mt-12">
           <div className="flex flex-col md:flex-row justify-between items-center gap-12 text-slate-400 font-black uppercase text-[10px] tracking-widest">
-            <div>© {new Date().getFullYear()} Techspark Core</div>
+            <div>© {new Date().getFullYear()} TaskSpark Core</div>
             <div className="flex gap-10">
               <Link href="/about-team" className="hover:text-blue-600 cursor-pointer transition-colors">About</Link>
               <Link href="/why-us" className="hover:text-blue-600 cursor-pointer transition-colors">Privacy</Link>
@@ -151,7 +151,7 @@ export default function AboutTeam() {
         </footer>
 
         <div className="mt-12">
-          <ScrollingText text="MEET THE BUILDERS • TECHSPARK • DESIGNING THE FUTURE •" speed={45} />
+          <ScrollingText text="MEET THE BUILDERS • TASKSPARK • DESIGNING THE FUTURE •" speed={45} />
         </div>
       </main>
     </div>
