@@ -34,13 +34,8 @@ export default function DashboardLayout({ children, role }: DashboardLayoutProps
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
-<<<<<<< HEAD
-              <Link href="/dashboard" className="text-2xl font-bold text-purple-400">
-                Taskspark
-=======
               <Link href="/dashboard" className="text-2xl font-bold text-blue-600">
                 TaskSpark
->>>>>>> origin/test
               </Link>
               <div className="ml-10 flex space-x-4">
                 {navItems.map((item) => (

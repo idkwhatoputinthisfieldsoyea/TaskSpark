@@ -41,32 +41,11 @@ export default function WhyUs() {
       <motion.div style={{ y: y2 }} className="fixed bottom-20 right-[5%] w-[600px] h-[600px] bg-indigo-100/30 rounded-full blur-[140px] -z-10" />
 
       {/* Navigation Bar */}
-<<<<<<< HEAD
-      <nav className="bg-gray-900 border-b border-gray-700">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16">
-            <div className="flex items-center">
-              <Link href="/" className="text-xl font-bold text-white">
-                Taskspark
-              </Link>
-            </div>
-            <div className="flex space-x-8">
-              <Link href="/careers" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                Careers
-              </Link>
-              <Link href="/about-team" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                About the Team
-              </Link>
-              <Link href="/why-us" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                Why Us?
-              </Link>
-=======
       <nav className="fixed w-full z-50 top-0 left-0 glass-card border-b border-slate-200/50">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3 group cursor-pointer">
             <div className="w-10 h-10 rounded-xl bg-slate-900 flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform">
               <span className="text-white font-bold italic">TS</span>
->>>>>>> origin/test
             </div>
             <span className="text-slate-900 font-bold text-xl tracking-tighter uppercase">TaskSpark</span>
           </Link>
@@ -81,23 +60,6 @@ export default function WhyUs() {
         </div>
       </nav>
 
-<<<<<<< HEAD
-      {/* Page Content */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <h1 className="text-4xl font-bold text-center mb-8">Why Choose Taskspark?</h1>
-        <p className="text-xl text-gray-300 text-center mb-12">
-          Discover what makes us the premier platform for student hiring.
-        </p>
-
-        <div className="space-y-12">
-          <div className="bg-gray-800 p-8 rounded-lg">
-            <h2 className="text-2xl font-semibold mb-4">🎯 Smart Matching Technology</h2>
-            <p className="text-gray-300">
-              Our AI-powered matching system connects students with opportunities that perfectly
-              align with their skills, interests, and career goals. No more endless scrolling
-              through irrelevant job postings.
-            </p>
-=======
       {/* Hero Section */}
       <section className="relative w-full min-h-screen flex flex-col items-center justify-center text-center px-6">
         <motion.div 
@@ -122,7 +84,6 @@ export default function WhyUs() {
                 <div className="shimmer" />
               </button>
             </Link>
->>>>>>> origin/test
           </div>
         </motion.div>
       </section>

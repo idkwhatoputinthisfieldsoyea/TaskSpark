@@ -41,22 +41,11 @@ export default function Careers() {
       <motion.div style={{ y: y2 }} className="fixed bottom-20 right-[5%] w-[500px] h-[500px] bg-indigo-100/30 rounded-full blur-[140px] -z-10" />
 
       {/* Navigation Bar */}
-<<<<<<< HEAD
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-md border-b border-gray-800 shadow-lg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            {/* Logo */}
-            <div className="flex items-center">
-              <Link href="/" className="text-2xl font-bold text-white hover:text-gray-300 transition-colors">
-                Taskspark
-              </Link>
-=======
       <nav className="fixed w-full z-50 top-0 left-0 glass-card border-b border-slate-200/50">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3 group cursor-pointer">
             <div className="w-10 h-10 rounded-xl bg-slate-900 flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform">
               <span className="text-white font-bold italic">TS</span>
->>>>>>> origin/test
             </div>
             <span className="text-slate-900 font-bold text-xl tracking-tighter uppercase">TaskSpark</span>
           </Link>
@@ -71,14 +60,6 @@ export default function Careers() {
         </div>
       </nav>
 
-<<<<<<< HEAD
-      {/* Page Content */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <h1 className="text-4xl font-bold text-center mb-8">Careers at Taskspark</h1>
-        <p className="text-xl text-gray-300 text-center mb-12">
-          Join our team and help shape the future of student hiring.
-        </p>
-=======
       {/* Hero Section */}
       <section className="relative w-full min-h-screen flex flex-col items-center justify-center text-center px-6 pt-20">
         <motion.div 
@@ -111,7 +92,6 @@ export default function Careers() {
           </div>
         </motion.div>
       </section>
->>>>>>> origin/test
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-6 pb-24">
