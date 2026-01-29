@@ -12,7 +12,7 @@ export default async function RecruiterSignUpPage() {
   }
 
   return (
-    <div className="min-h-screen flex itemscenter justify-center p-8 bg-white">
+    <div className="min-h-screen flex items-center justify-center p-8 bg-white">
       <div className="w-full max-w-md">
         <h1 className="text-3xl font-bold text-center mb-6 text-blue-600">Sign Up - Companies</h1>
         <SignUp 
@@ -45,7 +45,8 @@ export default async function RecruiterSignUpPage() {
               formFieldErrorText: "text-red-600",
             },
           }}
-          afterSignUpUrl="/onboarding?role=recruiter"
+          forceRedirectUrl="/onboarding?role=recruiter"
+          fallbackRedirectUrl="/onboarding?role=recruiter"
         />
       </div>
     </div>

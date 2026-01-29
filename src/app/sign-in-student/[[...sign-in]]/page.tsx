@@ -35,7 +35,8 @@ export default function StudentSignInPage() {
               formFieldErrorText: "text-red-600",
             },
           }}
-          afterSignInUrl="/dashboard"
+          forceRedirectUrl="/dashboard"
+          fallbackRedirectUrl="/dashboard"
         />
       </div>
     </div>

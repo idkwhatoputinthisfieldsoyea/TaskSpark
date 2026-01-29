@@ -45,7 +45,8 @@ export default async function StudentSignUpPage() {
               formFieldErrorText: "text-red-600",
             },
           }}
-          afterSignUpUrl="/onboarding?role=student"
+          forceRedirectUrl="/onboarding?role=student"
+          fallbackRedirectUrl="/onboarding?role=student"
         />
       </div>
     </div>

@@ -1,11 +1,12 @@
 import { SignUp } from "@clerk/nextjs";
 
-export default function SignUpWithRolePage({
+export default async function SignUpWithRolePage({
   searchParams,
 }: {
-  searchParams: { role?: string };
+  searchParams: Promise<{ role?: string }>;
 }) {
-  const role = searchParams.role === "recruiter" ? "recruiter" : "student";
+  const params = await searchParams;
+  const role = params.role === "recruiter" ? "recruiter" : "student";
   
   return (
     <div className="min-h-screen flex items-center justify-center p-8 bg-white">
@@ -43,7 +44,8 @@ export default function SignUpWithRolePage({
               formFieldErrorText: "text-red-600",
             },
           }}
-          afterSignUpUrl={`/onboarding?role=${role}`}
+          forceRedirectUrl={`/onboarding?role=${role}`}
+          fallbackRedirectUrl={`/onboarding?role=${role}`}
         />
       </div>
     </div>

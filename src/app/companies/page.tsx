@@ -1,12 +1,61 @@
+"use client";
+
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function RecruiterSignUpPage() {
 
   return (
-    <main className="min-h-screen bg-white text-slate-900 overflow-hidden relative">
+    <main className="min-h-screen bg-gradient-to-br from-white via-slate-50/50 to-blue-50/30 text-slate-900 overflow-hidden relative">
+
+      {/* Animated Background Elements */}
+      <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+        {/* Gradient Orbs */}
+        <motion.div 
+          animate={{ 
+            x: [0, -30, 0], 
+            y: [0, 20, 0],
+            scale: [1, 1.1, 1]
+          }}
+          transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-10 right-[10%] w-[500px] h-[500px] bg-gradient-to-br from-blue-500/15 to-indigo-400/20 rounded-full blur-[100px]" 
+        />
+        <motion.div 
+          animate={{ 
+            x: [0, 40, 0], 
+            y: [0, -30, 0],
+            scale: [1, 1.15, 1]
+          }}
+          transition={{ duration: 11, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+          className="absolute bottom-10 left-[5%] w-[550px] h-[550px] bg-gradient-to-br from-slate-400/10 to-blue-300/15 rounded-full blur-[120px]" 
+        />
+        <motion.div 
+          animate={{ 
+            scale: [1, 1.2, 1],
+            opacity: [0.3, 0.5, 0.3]
+          }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-gradient-to-br from-cyan-300/10 to-blue-200/10 rounded-full blur-[100px]" 
+        />
+        
+        {/* Decorative Grid */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(71,85,105,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(71,85,105,0.02)_1px,transparent_1px)] bg-[size:50px_50px]" />
+        
+        {/* Geometric Shapes */}
+        <motion.div 
+          animate={{ rotate: 360 }}
+          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+          className="absolute top-1/4 right-[15%] w-32 h-32 border border-blue-200/30 rounded-2xl"
+        />
+        <motion.div 
+          animate={{ rotate: -360 }}
+          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+          className="absolute bottom-1/3 left-[10%] w-24 h-24 border border-indigo-200/20 rounded-full"
+        />
+      </div>
 
       {/* Header */}
-      <header className="relative z-10 px-6 py-4 border-b border-slate-200">
+      <header className="relative z-10 px-6 py-4 border-b border-slate-200/50 backdrop-blur-sm bg-white/60">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <Link href="/" className="text-2xl font-bold text-slate-900">
             TaskSpark

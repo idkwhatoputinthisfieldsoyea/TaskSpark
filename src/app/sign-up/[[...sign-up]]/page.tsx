@@ -33,6 +33,8 @@ export default function SignUpPage() {
             formFieldErrorText: "text-red-600",
           },
         }}
+        forceRedirectUrl="/onboarding"
+        fallbackRedirectUrl="/onboarding"
       />
     </div>
   );

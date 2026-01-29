@@ -33,16 +33,45 @@ export default function Careers() {
   const y2 = useTransform(scrollYProgress, [0, 1], [0, 300]);
 
   return (
-    <div ref={containerRef} className="relative bg-white selection:bg-blue-600 selection:text-white overflow-x-hidden">
-      <style>{shimmerStyles}</style>
+      <div ref={containerRef} className="relative selection:bg-blue-600 selection:text-white overflow-x-hidden bg-gradient-to-br from-white via-indigo-50/30 to-blue-50/40">
+        <style>{shimmerStyles}</style>
 
-      {/* Floating Background Elements */}
-      <motion.div style={{ y: y1 }} className="fixed top-20 left-[5%] w-96 h-96 bg-blue-100/40 rounded-full blur-[120px] -z-10" />
-      <motion.div style={{ y: y2 }} className="fixed bottom-20 right-[5%] w-[500px] h-[500px] bg-indigo-100/30 rounded-full blur-[140px] -z-10" />
+        {/* Animated Background Elements */}
+        <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+          {/* Parallax Gradient Orbs */}
+          <motion.div 
+            style={{ y: y1 }} 
+            className="absolute top-20 left-[5%] w-[450px] h-[450px] bg-gradient-to-br from-blue-400/25 to-indigo-300/20 rounded-full blur-[100px]" 
+          />
+          <motion.div 
+            style={{ y: y2 }} 
+            className="absolute bottom-20 right-[5%] w-[550px] h-[550px] bg-gradient-to-br from-indigo-400/20 to-cyan-300/15 rounded-full blur-[120px]" 
+          />
+          <motion.div 
+            animate={{ scale: [1, 1.15, 1], opacity: [0.2, 0.4, 0.2] }}
+            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-1/3 left-1/3 w-[500px] h-[500px] bg-gradient-to-br from-purple-200/15 to-blue-200/10 rounded-full blur-[120px]" 
+          />
+          
+          {/* Subtle Grid Pattern */}
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(99,102,241,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.02)_1px,transparent_1px)] bg-[size:50px_50px]" />
+          
+          {/* Decorative Elements */}
+          <motion.div 
+            animate={{ rotate: 360 }}
+            transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+            className="absolute top-[20%] right-[15%] w-24 h-24 border border-indigo-200/30 rounded-2xl"
+          />
+          <motion.div 
+            animate={{ rotate: -360, y: [0, -15, 0] }}
+            transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute bottom-[30%] left-[10%] w-16 h-16 border border-blue-200/25 rounded-full"
+          />
+        </div>
 
-      {/* Navigation Bar */}
-      <nav className="fixed w-full z-50 top-0 left-0 glass-card border-b border-slate-200/50">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        {/* Navigation */}
+        <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-white/80 border-b border-slate-100">
+          <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           <Link href="/" className="flex items-center gap-3 group cursor-pointer">
             <div className="w-10 h-10 rounded-xl bg-slate-900 flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform">
               <span className="text-white font-bold italic">TS</span>
@@ -63,33 +92,56 @@ export default function Careers() {
       {/* Hero Section */}
       <section className="relative w-full min-h-screen flex flex-col items-center justify-center text-center px-6 pt-20">
         <motion.div 
-          initial={{ opacity: 0, y: 30 }} 
+          initial={{ opacity: 0, y: 40 }} 
           animate={{ opacity: 1, y: 0 }} 
-          transition={{ duration: 1 }}
+          transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="max-w-5xl mx-auto"
         >
           <h1 className="flex flex-col items-center">
-            <span className="text-2xl md:text-4xl font-black text-slate-400 uppercase tracking-[0.2em] mb-4">Careers at</span>
-            <span className="text-7xl md:text-[10vw] font-black text-slate-900 leading-[0.8] tracking-[-0.05em] uppercase">
+            <motion.span 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="text-2xl md:text-4xl font-black text-slate-400 uppercase tracking-[0.2em] mb-4"
+            >
+              Careers at
+            </motion.span>
+            <motion.span 
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="text-7xl md:text-[10vw] font-black text-slate-900 leading-[0.8] tracking-[-0.05em] uppercase"
+            >
               <span className="text-transparent bg-clip-text bg-gradient-to-br from-blue-600 via-indigo-500 to-cyan-400">TaskSpark</span>
-            </span>
+            </motion.span>
           </h1>
-          <p className="mt-12 text-xl md:text-2xl text-slate-600 max-w-2xl mx-auto font-medium leading-relaxed">
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="mt-12 text-xl md:text-2xl text-slate-600 max-w-2xl mx-auto font-medium leading-relaxed"
+          >
             Join our mission to connect students with real opportunities. Explore open roles and help shape the future of youth talent.
-          </p>
-          <div className="mt-12 flex flex-wrap justify-center gap-6">
+          </motion.p>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="mt-12 flex flex-wrap justify-center gap-6"
+          >
             <Link href="/sign-up-recruiter">
-              <button className="px-10 py-5 bg-blue-600 text-white rounded-2xl font-black text-lg shadow-2xl hover:bg-blue-700 hover:-translate-y-2 transition-all cursor-pointer shimmer-btn">
+              <button className="px-10 py-5 bg-blue-600 text-white rounded-2xl font-black text-lg shadow-2xl hover:bg-blue-700 hover:-translate-y-2 transition-all duration-300 ease-out cursor-pointer shimmer-btn">
                 Post a Job
                 <div className="shimmer" />
               </button>
             </Link>
-            <Link href="/sign-up-student">
-              <button className="px-10 py-5 bg-white border-2 border-slate-900 text-slate-900 rounded-2xl font-black text-lg hover:bg-slate-900 hover:text-white hover:-translate-y-2 transition-all cursor-pointer">
-                Join as a Student
-              </button>
+            <Link 
+              href="/sign-up-student"
+              className="px-10 py-5 bg-white border-2 border-slate-900 text-slate-900 rounded-2xl font-black text-lg hover:bg-slate-900 hover:text-white hover:-translate-y-2 transition-all duration-300 ease-out cursor-pointer inline-block"
+            >
+              Join as a Student
             </Link>
-          </div>
+          </motion.div>
         </motion.div>
       </section>
 

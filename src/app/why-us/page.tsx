@@ -33,16 +33,57 @@ export default function WhyUs() {
   const y2 = useTransform(scrollYProgress, [0, 1], [0, 400]);
 
   return (
-    <div ref={containerRef} className="relative bg-white selection:bg-blue-600 selection:text-white overflow-x-hidden">
-      <style>{shimmerStyles}</style>
+      <div ref={containerRef} className="relative selection:bg-blue-600 selection:text-white overflow-x-hidden bg-gradient-to-br from-white via-blue-50/40 to-indigo-50/30">
+        <style>{shimmerStyles}</style>
 
-      {/* Floating Background Elements */}
-      <motion.div style={{ y: y1 }} className="fixed top-20 left-[5%] w-96 h-96 bg-blue-100/40 rounded-full blur-[120px] -z-10" />
-      <motion.div style={{ y: y2 }} className="fixed bottom-20 right-[5%] w-[600px] h-[600px] bg-indigo-100/30 rounded-full blur-[140px] -z-10" />
+        {/* Animated Background Elements */}
+        <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+          {/* Parallax Gradient Orbs */}
+          <motion.div 
+            style={{ y: y1 }} 
+            className="absolute top-20 left-[5%] w-[500px] h-[500px] bg-gradient-to-br from-blue-400/25 to-cyan-300/15 rounded-full blur-[100px]" 
+          />
+          <motion.div 
+            style={{ y: y2 }} 
+            className="absolute bottom-20 right-[5%] w-[600px] h-[600px] bg-gradient-to-br from-indigo-400/20 to-purple-300/15 rounded-full blur-[120px]" 
+          />
+          <motion.div 
+            animate={{ scale: [1, 1.2, 1] }}
+            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-1/2 right-1/4 w-[400px] h-[400px] bg-gradient-to-br from-cyan-200/15 to-blue-200/10 rounded-full blur-[100px]" 
+          />
+          
+          {/* Dot Pattern */}
+          <div className="absolute inset-0 bg-[radial-gradient(rgba(59,130,246,0.05)_1px,transparent_1px)] bg-[size:40px_40px]" />
+          
+          {/* Floating Elements */}
+          <motion.div 
+            animate={{ rotate: 360, scale: [1, 1.1, 1] }}
+            transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+            className="absolute top-[25%] right-[20%] w-20 h-20 border-2 border-blue-200/25 rounded-2xl"
+          />
+          <motion.div 
+            animate={{ y: [0, -30, 0], rotate: 180 }}
+            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute bottom-[35%] left-[12%] w-14 h-14 bg-gradient-to-br from-indigo-300/10 to-blue-300/10 rounded-xl"
+          />
+          
+          {/* Rising Particles */}
+          <motion.div 
+            animate={{ y: [0, -140], opacity: [0, 0.6, 0] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeOut" }}
+            className="absolute bottom-0 left-[30%] w-2 h-2 bg-blue-400/50 rounded-full"
+          />
+          <motion.div 
+            animate={{ y: [0, -160], opacity: [0, 0.5, 0] }}
+            transition={{ duration: 6, repeat: Infinity, ease: "easeOut", delay: 1.5 }}
+            className="absolute bottom-0 right-[35%] w-2.5 h-2.5 bg-indigo-400/40 rounded-full"
+          />
+        </div>
 
-      {/* Navigation Bar */}
-      <nav className="fixed w-full z-50 top-0 left-0 glass-card border-b border-slate-200/50">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        {/* Navigation */}
+        <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-white/80 border-b border-slate-100">
+          <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           <Link href="/" className="flex items-center gap-3 group cursor-pointer">
             <div className="w-10 h-10 rounded-xl bg-slate-900 flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform">
               <span className="text-white font-bold italic">TS</span>
@@ -61,30 +102,52 @@ export default function WhyUs() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative w-full min-h-screen flex flex-col items-center justify-center text-center px-6">
+      <section className="relative w-full min-h-screen flex flex-col items-center justify-center text-center px-6 pt-20">
         <motion.div 
-          initial={{ opacity: 0, y: 30 }} 
+          initial={{ opacity: 0, y: 40 }} 
           animate={{ opacity: 1, y: 0 }} 
-          transition={{ duration: 1 }}
+          transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="max-w-6xl mx-auto"
         >
           <h1 className="flex flex-col items-center">
-            <span className="text-2xl md:text-4xl font-black text-slate-400 uppercase tracking-[0.2em] mb-4">Discover</span>
-            <span className="text-7xl md:text-[12vw] font-black text-slate-900 leading-[0.75] tracking-[-0.05em] uppercase">
+            <motion.span 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="text-2xl md:text-4xl font-black text-slate-400 uppercase tracking-[0.2em] mb-4"
+            >
+              Discover
+            </motion.span>
+            <motion.span 
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="text-7xl md:text-[12vw] font-black text-slate-900 leading-[0.75] tracking-[-0.05em] uppercase"
+            >
               WHY <span className="text-transparent bg-clip-text bg-gradient-to-br from-blue-600 to-indigo-500">US?</span>
-            </span>
+            </motion.span>
           </h1>
-          <p className="mt-12 text-xl md:text-2xl text-slate-500 max-w-2xl mx-auto font-medium leading-relaxed">
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="mt-12 text-xl md:text-2xl text-slate-500 max-w-2xl mx-auto font-medium leading-relaxed"
+          >
             We aren't just another job board. Discover what makes TaskSpark the premier ecosystem for the next generation of builders.
-          </p>
-          <div className="mt-12 flex flex-wrap justify-center gap-6">
+          </motion.p>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="mt-12 flex flex-wrap justify-center gap-6"
+          >
             <Link href="/sign-up-student">
-              <button className="px-12 py-6 bg-blue-600 text-white rounded-2xl font-black text-xl shadow-[0_20px_50px_rgba(37,99,235,0.3)] hover:bg-blue-700 hover:-translate-y-2 transition-all cursor-pointer shimmer-btn">
+              <button className="px-12 py-6 bg-blue-600 text-white rounded-2xl font-black text-xl shadow-[0_20px_50px_rgba(37,99,235,0.3)] hover:bg-blue-700 hover:-translate-y-2 transition-all duration-300 ease-out cursor-pointer shimmer-btn">
                 Start Building
                 <div className="shimmer" />
               </button>
             </Link>
-          </div>
+          </motion.div>
         </motion.div>
       </section>
 
@@ -140,15 +203,17 @@ export default function WhyUs() {
         <section className="py-32 text-center">
           <h3 className="text-4xl md:text-6xl font-black text-slate-900 tracking-tighter mb-12">READY TO GET STARTED?</h3>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <Link href="/sign-up-student">
-              <button className="px-10 py-5 bg-blue-600 text-white rounded-2xl font-black text-lg hover:bg-blue-700 hover:scale-105 transition-all cursor-pointer shadow-lg shadow-blue-200">
-                Join as a Student
-              </button>
+            <Link 
+              href="/sign-up-student"
+              className="px-10 py-5 bg-blue-600 text-white rounded-2xl font-black text-lg hover:bg-blue-700 hover:scale-105 transition-all cursor-pointer shadow-lg shadow-blue-200 inline-block"
+            >
+              Join as a Student
             </Link>
-            <Link href="/sign-up-recruiter">
-              <button className="px-10 py-5 bg-white border-2 border-slate-900 text-slate-900 rounded-2xl font-black text-lg hover:bg-slate-900 hover:text-white hover:scale-105 transition-all cursor-pointer">
-                Hire Students
-              </button>
+            <Link 
+              href="/sign-up-recruiter"
+              className="px-10 py-5 bg-white border-2 border-slate-900 text-slate-900 rounded-2xl font-black text-lg hover:bg-slate-900 hover:text-white hover:scale-105 transition-all cursor-pointer inline-block"
+            >
+              Hire Students
             </Link>
           </div>
         </section>

@@ -8,7 +8,7 @@ export const dynamic = "force-dynamic";
 export default async function MessagesPage({
   searchParams,
 }: {
-  searchParams: { receiver_id?: string; job_id?: string };
+  searchParams: Promise<{ receiver_id?: string; job_id?: string }>;
 }) {
   const user = await currentUser();
   
@@ -16,6 +16,7 @@ export default async function MessagesPage({
     redirect("/sign-in");
   }
 
+  const params = await searchParams;
   const supabase = createServerClient();
   const { data: profile } = await supabase
     .from("profiles")
@@ -28,12 +29,12 @@ export default async function MessagesPage({
   }
 
   // If a job_id is provided but no receiver_id, resolve recruiter id for student users
-  let receiverId = searchParams.receiver_id;
-  if (!receiverId && searchParams.job_id && profile.role === "student") {
+  let receiverId = params.receiver_id;
+  if (!receiverId && params.job_id && profile.role === "student") {
     const { data: job } = await supabase
       .from("jobs")
       .select("recruiter_id")
-      .eq("id", searchParams.job_id)
+      .eq("id", params.job_id)
       .single();
 
     if (job?.recruiter_id) {
@@ -48,7 +49,7 @@ export default async function MessagesPage({
         <MessagesView
           profileId={profile.id}
           receiverId={receiverId}
-          jobId={searchParams.job_id}
+          jobId={params.job_id}
         />
       </div>
     </DashboardLayout>

@@ -33,6 +33,8 @@ export default function SignInPage() {
             formFieldErrorText: "text-red-600",
           },
         }}
+        forceRedirectUrl="/dashboard"
+        fallbackRedirectUrl="/dashboard"
       />
     </div>
   );

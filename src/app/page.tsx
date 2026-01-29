@@ -33,16 +33,72 @@ export default function Home() {
   const y2 = useTransform(scrollYProgress, [0, 1], [0, 400]);
 
   return (
-    <div ref={containerRef} className="relative bg-white selection:bg-blue-600 selection:text-white overflow-x-hidden">
-      <style>{shimmerStyles}</style>
-      
-      {/* Floating Background Elements */}
-      <motion.div style={{ y: y1 }} className="fixed top-20 left-[5%] w-96 h-96 bg-blue-100/40 rounded-full blur-[120px] -z-10" />
-      <motion.div style={{ y: y2 }} className="fixed bottom-20 right-[5%] w-[600px] h-[600px] bg-indigo-100/30 rounded-full blur-[140px] -z-10" />
+      <div ref={containerRef} className="relative selection:bg-blue-600 selection:text-white overflow-x-hidden bg-gradient-to-b from-white via-slate-50/50 to-white">
+        <style>{shimmerStyles}</style>
+        
+        {/* Animated Background Elements */}
+        <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+          {/* Parallax Gradient Orbs */}
+          <motion.div 
+            style={{ y: y1 }} 
+            className="absolute top-20 left-[5%] w-[500px] h-[500px] bg-gradient-to-br from-blue-400/25 to-cyan-300/20 rounded-full blur-[100px]" 
+          />
+          <motion.div 
+            style={{ y: y2 }} 
+            className="absolute bottom-20 right-[5%] w-[600px] h-[600px] bg-gradient-to-br from-indigo-400/20 to-purple-300/15 rounded-full blur-[120px]" 
+          />
+          <motion.div 
+            animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
+            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-br from-blue-200/15 to-indigo-200/10 rounded-full blur-[150px]" 
+          />
+          
+          {/* Subtle Grid Pattern */}
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.02)_1px,transparent_1px)] bg-[size:60px_60px]" />
+          
+          {/* Floating Geometric Shapes */}
+          <motion.div 
+            animate={{ rotate: 360, y: [0, -20, 0] }}
+            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            className="absolute top-[15%] right-[20%] w-20 h-20 border-2 border-blue-200/30 rounded-2xl"
+          />
+          <motion.div 
+            animate={{ rotate: -360 }}
+            transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+            className="absolute bottom-[25%] left-[15%] w-16 h-16 border-2 border-indigo-200/25 rounded-full"
+          />
+          <motion.div 
+            animate={{ rotate: 180, scale: [1, 1.1, 1] }}
+            transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-[60%] right-[10%] w-12 h-12 bg-gradient-to-br from-cyan-400/10 to-blue-400/10 rounded-lg"
+          />
+          
+          {/* Rising Particles */}
+          <motion.div 
+            animate={{ y: [0, -150], opacity: [0, 0.6, 0] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeOut" }}
+            className="absolute bottom-0 left-[25%] w-2 h-2 bg-blue-400/50 rounded-full"
+          />
+          <motion.div 
+            animate={{ y: [0, -180], opacity: [0, 0.5, 0] }}
+            transition={{ duration: 6, repeat: Infinity, ease: "easeOut", delay: 1 }}
+            className="absolute bottom-0 left-[45%] w-3 h-3 bg-indigo-400/40 rounded-full"
+          />
+          <motion.div 
+            animate={{ y: [0, -120], opacity: [0, 0.7, 0] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeOut", delay: 2 }}
+            className="absolute bottom-0 right-[25%] w-2 h-2 bg-cyan-400/50 rounded-full"
+          />
+          <motion.div 
+            animate={{ y: [0, -200], opacity: [0, 0.4, 0] }}
+            transition={{ duration: 7, repeat: Infinity, ease: "easeOut", delay: 0.5 }}
+            className="absolute bottom-0 right-[40%] w-1.5 h-1.5 bg-purple-400/40 rounded-full"
+          />
+        </div>
 
-      {/* Navigation */}
-      <nav className="fixed w-full z-50 top-0 left-0 glass-card border-b border-slate-200/50">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        {/* Navigation */}
+        <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-white/80 border-b border-slate-100">
+          <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           <Link href="/" className="flex items-center gap-3 group cursor-pointer">
             <div className="w-10 h-10 rounded-xl bg-slate-900 flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform">
               <span className="text-white font-bold italic">TS</span>
@@ -60,33 +116,68 @@ export default function Home() {
       </nav>
 
       {/* HERO SECTION: Redesigned Typography */}
-      <section className="relative w-full min-h-screen flex flex-col items-center justify-center text-center px-6">
-        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} className="max-w-6xl mx-auto">
+      <section className="relative w-full min-h-screen flex flex-col items-center justify-center text-center px-6 pt-20">
+        <motion.div 
+          initial={{ opacity: 0, y: 40 }} 
+          animate={{ opacity: 1, y: 0 }} 
+          transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }} 
+          className="max-w-6xl mx-auto"
+        >
           <h1 className="flex flex-col items-center">
-            <span className="text-2xl md:text-4xl font-black text-slate-400 uppercase tracking-[0.2em] mb-4">Small tasks.</span>
-            <span className="text-8xl md:text-[14vw] font-black text-slate-900 leading-[0.75] tracking-[ -0.05em] uppercase">
+            <motion.span 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="text-2xl md:text-4xl font-black text-slate-400 uppercase tracking-[0.2em] mb-4"
+            >
+              Small tasks.
+            </motion.span>
+            <motion.span 
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="text-8xl md:text-[14vw] font-black text-slate-900 leading-[0.75] tracking-[-0.05em] uppercase"
+            >
               <span className="text-transparent bg-clip-text bg-gradient-to-br from-blue-600 via-indigo-500 to-cyan-400">BIG</span>
-            </span>
-            <span className="text-2xl md:text-4xl font-black text-slate-400 uppercase tracking-[0.2em] mt-4">Opportunities.</span>
+            </motion.span>
+            <motion.span 
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="text-2xl md:text-4xl font-black text-slate-400 uppercase tracking-[0.2em] mt-4"
+            >
+              Opportunities.
+            </motion.span>
           </h1>
           
-          <p className="mt-12 text-xl md:text-2xl text-slate-500 max-w-2xl mx-auto font-medium leading-relaxed">
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="mt-12 text-xl md:text-2xl text-slate-500 max-w-2xl mx-auto font-medium leading-relaxed"
+          >
             TaskSpark connects motivated students with businesses that need quick, affordable help — turning everyday tasks into real experience.
-          </p>
+          </motion.p>
 
-          <div className="mt-12 flex flex-wrap justify-center gap-6">
-            <Link href="/post-task">
-              <button className="px-12 py-6 bg-blue-600 text-white rounded-2xl font-black text-xl shadow-[0_20px_50px_rgba(37,99,235,0.3)] hover:bg-blue-700 hover:-translate-y-2 transition-all cursor-pointer shimmer-btn">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="mt-12 flex flex-wrap justify-center gap-6"
+          >
+            <Link href="/dashboard/create-job">
+              <button className="px-12 py-6 bg-blue-600 text-white rounded-2xl font-black text-xl shadow-[0_20px_50px_rgba(37,99,235,0.3)] hover:bg-blue-700 hover:-translate-y-2 transition-all duration-300 ease-out cursor-pointer shimmer-btn">
                 Post a Task
                 <div className="shimmer" />
               </button>
             </Link>
-            <Link href="/sign-up-student">
-              <button className="px-12 py-6 bg-white border-2 border-slate-900 text-slate-900 rounded-2xl font-black text-xl hover:bg-slate-900 hover:text-white hover:-translate-y-2 transition-all cursor-pointer">
-                Join as a Student
-              </button>
+            <Link 
+              href="/sign-up-student"
+              className="px-12 py-6 bg-white border-2 border-slate-900 text-slate-900 rounded-2xl font-black text-xl hover:bg-slate-900 hover:text-white hover:-translate-y-2 transition-all duration-300 ease-out cursor-pointer inline-block"
+            >
+              Join as a Student
             </Link>
-          </div>
+          </motion.div>
         </motion.div>
       </section>
 
@@ -145,21 +236,33 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <h2 className="text-center text-sm font-black uppercase tracking-[0.5em] text-slate-300 mb-32">The Blueprint</h2>
           <div className="space-y-40">
-            <motion.div whileInView={{ opacity: 1, x: 0 }} initial={{ opacity: 0, x: -50 }} className="flex flex-col md:flex-row items-center gap-16">
+            <motion.div 
+              whileInView={{ opacity: 1, x: 0 }} 
+              initial={{ opacity: 0, x: -80 }} 
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="flex flex-col md:flex-row items-center gap-16"
+            >
               <div className="md:w-1/2 relative">
                 <span className="text-[12rem] font-black text-slate-50 absolute -left-10 -top-20 -z-10 select-none">01</span>
                 <h3 className="text-4xl font-black mb-6 italic underline decoration-blue-500 decoration-8 underline-offset-[10px]">UNBUNDLING JOBS</h3>
                 <p className="text-lg text-slate-600 leading-relaxed font-medium">Stop hiring for "roles" and start hiring for "tasks". Get results without the overhead.</p>
               </div>
-              <div className="md:w-1/2 h-64 bg-slate-900 rounded-[3rem] flex items-center justify-center text-white text-4xl font-black cursor-default">SPEED</div>
+              <div className="md:w-1/2 h-64 bg-slate-900 rounded-[3rem] flex items-center justify-center text-white text-4xl font-black cursor-default hover:scale-[1.02] transition-transform duration-300">SPEED</div>
             </motion.div>
-            <motion.div whileInView={{ opacity: 1, x: 0 }} initial={{ opacity: 0, x: 50 }} className="flex flex-col md:flex-row-reverse items-center gap-16">
+            <motion.div 
+              whileInView={{ opacity: 1, x: 0 }} 
+              initial={{ opacity: 0, x: 80 }} 
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="flex flex-col md:flex-row-reverse items-center gap-16"
+            >
               <div className="md:w-1/2 relative">
                 <span className="text-[12rem] font-black text-slate-50 absolute -right-10 -top-20 -z-10 select-none">02</span>
                 <h3 className="text-4xl font-black mb-6 italic underline decoration-indigo-500 decoration-8 underline-offset-[10px]">VETTED ENERGY</h3>
                 <p className="text-lg text-slate-600 leading-relaxed font-medium">Ambitious students ready to prove themselves. High energy, technical agility.</p>
               </div>
-              <div className="md:w-1/2 h-64 bg-blue-600 rounded-[3rem] flex items-center justify-center text-white text-4xl font-black cursor-default">QUALITY</div>
+              <div className="md:w-1/2 h-64 bg-blue-600 rounded-[3rem] flex items-center justify-center text-white text-4xl font-black cursor-default hover:scale-[1.02] transition-transform duration-300">QUALITY</div>
             </motion.div>
           </div>
         </div>

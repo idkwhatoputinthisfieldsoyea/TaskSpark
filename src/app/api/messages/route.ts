@@ -20,23 +20,36 @@ export async function GET(request: Request) {
     const profile = await getProfileForUser(userId);
     if (!profile) return NextResponse.json({ error: "Unauthorized" }, { status: 403 });
 
-    let query = supabase
-      .from("messages")
-      .select(`
-        *,
-        sender:profiles!messages_sender_id_fkey(id, full_name, email),
-        receiver:profiles!messages_receiver_id_fkey(id, full_name, email)
-      `)
-      .or(`sender_id.eq.${profile.id},receiver_id.eq.${profile.id}`)
-      .order("created_at", { ascending: true });
-
+    let query;
+    
     if (receiverId) {
-      query = query.or(
-        `and(sender_id.eq.${profile.id},receiver_id.eq.${receiverId}),and(sender_id.eq.${receiverId},receiver_id.eq.${profile.id})`
-      );
+      // Filter to only messages between the user and the specific receiver
+      query = supabase
+        .from("messages")
+        .select(`
+          *,
+          sender:profiles!messages_sender_id_fkey(id, full_name, email),
+          receiver:profiles!messages_receiver_id_fkey(id, full_name, email)
+        `)
+        .or(
+          `and(sender_id.eq.${profile.id},receiver_id.eq.${receiverId}),and(sender_id.eq.${receiverId},receiver_id.eq.${profile.id})`
+        )
+        .order("created_at", { ascending: true });
+    } else {
+      // Get all messages involving this user
+      query = supabase
+        .from("messages")
+        .select(`
+          *,
+          sender:profiles!messages_sender_id_fkey(id, full_name, email),
+          receiver:profiles!messages_receiver_id_fkey(id, full_name, email)
+        `)
+        .or(`sender_id.eq.${profile.id},receiver_id.eq.${profile.id}`)
+        .order("created_at", { ascending: true });
     }
 
-    if (jobId) {
+    // Only filter by job_id if explicitly provided and not empty
+    if (jobId && jobId !== "null" && jobId !== "undefined") {
       query = query.eq("job_id", jobId);
     }
 
@@ -90,6 +103,46 @@ export async function POST(request: Request) {
     return NextResponse.json(message);
   } catch (error) {
     console.error("Error in POST /api/messages:", error);
+    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
+  }
+}
+
+export async function PATCH(request: Request) {
+  try {
+    const { userId } = await auth();
+    if (!userId) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
+
+    const supabase = createServerClient();
+
+    // Get user profile (cached)
+    const profile = await getProfileForUser(userId);
+    if (!profile) return NextResponse.json({ error: "Unauthorized" }, { status: 403 });
+
+    const body = await request.json();
+    const { message_ids, is_read } = body;
+
+    if (!message_ids || !Array.isArray(message_ids)) {
+      return NextResponse.json({ error: "message_ids array required" }, { status: 400 });
+    }
+
+    // Only allow marking messages as read if the user is the receiver
+    const { data, error } = await supabase
+      .from("messages")
+      .update({ is_read: is_read ?? true })
+      .in("id", message_ids)
+      .eq("receiver_id", profile.id)
+      .select();
+
+    if (error) {
+      console.error("Error updating messages:", error);
+      return NextResponse.json({ error: "Failed to update messages" }, { status: 500 });
+    }
+
+    return NextResponse.json({ updated: data?.length || 0 });
+  } catch (error) {
+    console.error("Error in PATCH /api/messages:", error);
     return NextResponse.json({ error: "Internal server error" }, { status: 500 });
   }
 }

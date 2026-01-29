@@ -1,12 +1,66 @@
+"use client";
+
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function StudentSignUpPage() {
 
   return (
-    <main className="min-h-screen bg-white text-slate-900 overflow-hidden relative">
+    <main className="min-h-screen bg-gradient-to-br from-white via-blue-50/30 to-indigo-50/40 text-slate-900 overflow-hidden relative">
+
+      {/* Animated Background Elements */}
+      <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+        {/* Gradient Orbs */}
+        <motion.div 
+          animate={{ 
+            x: [0, 30, 0], 
+            y: [0, -20, 0],
+            scale: [1, 1.1, 1]
+          }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-20 left-[10%] w-[500px] h-[500px] bg-gradient-to-br from-blue-400/20 to-cyan-300/20 rounded-full blur-[100px]" 
+        />
+        <motion.div 
+          animate={{ 
+            x: [0, -40, 0], 
+            y: [0, 30, 0],
+            scale: [1, 1.15, 1]
+          }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          className="absolute bottom-20 right-[5%] w-[600px] h-[600px] bg-gradient-to-br from-indigo-400/20 to-purple-300/15 rounded-full blur-[120px]" 
+        />
+        <motion.div 
+          animate={{ 
+            x: [0, 20, 0], 
+            y: [0, 40, 0],
+          }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-br from-blue-200/10 to-indigo-200/10 rounded-full blur-[150px]" 
+        />
+        
+        {/* Decorative Grid */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.03)_1px,transparent_1px)] bg-[size:60px_60px]" />
+        
+        {/* Floating Particles */}
+        <motion.div 
+          animate={{ y: [0, -100], opacity: [0, 1, 0] }}
+          transition={{ duration: 4, repeat: Infinity, ease: "easeOut" }}
+          className="absolute bottom-0 left-[20%] w-2 h-2 bg-blue-400/40 rounded-full"
+        />
+        <motion.div 
+          animate={{ y: [0, -120], opacity: [0, 1, 0] }}
+          transition={{ duration: 5, repeat: Infinity, ease: "easeOut", delay: 1 }}
+          className="absolute bottom-0 left-[50%] w-3 h-3 bg-indigo-400/30 rounded-full"
+        />
+        <motion.div 
+          animate={{ y: [0, -80], opacity: [0, 1, 0] }}
+          transition={{ duration: 3.5, repeat: Infinity, ease: "easeOut", delay: 2 }}
+          className="absolute bottom-0 right-[30%] w-2 h-2 bg-cyan-400/40 rounded-full"
+        />
+      </div>
 
       {/* Header */}
-      <header className="relative z-10 px-6 py-6 border-b border-slate-200">
+      <header className="relative z-10 px-6 py-6 border-b border-slate-200/50 backdrop-blur-sm bg-white/50">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="text-3xl font-bold tracking-wider text-slate-900">TASKSPARK</div>
           <nav className="hidden md:flex space-x-8">
@@ -64,7 +118,7 @@ export default function StudentSignUpPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Feature 1 */}
             <div className="bg-slate-50 rounded-lg p-8 border border-slate-200 hover:border-blue-500/50 transition-all duration-300 hover:transform hover:scale-105">
-              <div className="w-16 h-16 bg-slate-100 rounded-lg flex items-center justifycenter mb-6 border border-slate-200">
+              <div className="w-16 h-16 bg-slate-100 rounded-lg flex items-center justify-center mb-6 border border-slate-200">
                 <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
