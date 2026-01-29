@@ -6,7 +6,11 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+<<<<<<< HEAD
   title: "Taskspark - Connect Students with Opportunities",
+=======
+  title: "TaskSpark - Connect Students with Opportunities",
+>>>>>>> origin/test
   description: "A platform connecting students with recruiters and job opportunities",
 };
 

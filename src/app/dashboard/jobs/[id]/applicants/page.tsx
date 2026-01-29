@@ -43,8 +43,8 @@ export default async function ApplicantsPage({
     <DashboardLayout role="recruiter">
       <div className="space-y-6">
         <div>
-          <h1 className="text-3xl font-bold text-white mb-2">Applicants for {job.title}</h1>
-          <p className="text-gray-400">Review and manage applications for this position</p>
+          <h1 className="text-3xl font-bold text-slate-900 mb-2">Applicants for {job.title}</h1>
+          <p className="text-slate-600">Review and manage applications for this position</p>
         </div>
         <ApplicantList jobId={params.id} />
       </div>

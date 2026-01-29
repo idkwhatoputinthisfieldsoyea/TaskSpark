@@ -143,7 +143,7 @@ export default function StudentProfileForm({
           value={formData.skills}
           onChange={(e) => setFormData({ ...formData, skills: e.target.value })}
           placeholder="e.g., React, TypeScript, Python"
-          className="w-full px-4 py-2 bg-dark-bg border border-dark-border rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-600"
+          className="w-full px-4 py-2 bg-dark-bg border border-dark-border rounded-lg text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-600"
         />
       </div>
 
@@ -153,7 +153,7 @@ export default function StudentProfileForm({
           rows={4}
           value={formData.bio}
           onChange={(e) => setFormData({ ...formData, bio: e.target.value })}
-          className="w-full px-4 py-2 bg-dark-bg border border-dark-border rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-600"
+          className="w-full px-4 py-2 bg-dark-bg border border-dark-border rounded-lg text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-600"
         />
       </div>
 
@@ -164,7 +164,7 @@ export default function StudentProfileForm({
           value={formData.availability}
           onChange={(e) => setFormData({ ...formData, availability: e.target.value })}
           placeholder="e.g., Available immediately, Part-time 20hrs/week"
-          className="w-full px-4 py-2 bg-dark-bg border border-dark-border rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-600"
+          className="w-full px-4 py-2 bg-dark-bg border border-dark-border rounded-lg text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-600"
         />
       </div>
 
@@ -175,7 +175,7 @@ export default function StudentProfileForm({
           value={formData.resume_url}
           onChange={(e) => setFormData({ ...formData, resume_url: e.target.value })}
           placeholder="https://..."
-          className="w-full px-4 py-2 bg-dark-bg border border-dark-border rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-600"
+          className="w-full px-4 py-2 bg-dark-bg border border-dark-border rounded-lg text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-600"
         />
       </div>
 
@@ -186,7 +186,7 @@ export default function StudentProfileForm({
           {formData.projects.map((project, index) => (
             <div key={index} className="bg-dark-bg border border-dark-border rounded-lg p-4">
               <div className="flex justify-between items-start mb-2">
-                <h4 className="font-semibold text-white">{project.name}</h4>
+                <h4 className="font-semibold text-slate-900">{project.name}</h4>
                 <button
                   type="button"
                   onClick={() => removeProject(index)}
@@ -195,10 +195,10 @@ export default function StudentProfileForm({
                   Remove
                 </button>
               </div>
-              <p className="text-gray-400 text-sm mb-2">{project.description}</p>
+              <p className="text-slate-600 text-sm mb-2">{project.description}</p>
               <div className="flex flex-wrap gap-2">
                 {project.technologies.map((tech, i) => (
-                  <span key={i} className="px-2 py-1 bg-purple-900/20 text-purple-300 rounded text-xs">
+                  <span key={i} className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">
                     {tech}
                   </span>
                 ))}
@@ -213,21 +213,21 @@ export default function StudentProfileForm({
             placeholder="Project Name"
             value={newProject.name}
             onChange={(e) => setNewProject({ ...newProject, name: e.target.value })}
-            className="w-full px-4 py-2 bg-dark-bg border border-dark-border rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-purple-600"
+            className="w-full px-4 py-2 bg-dark-bg border border-dark-border rounded-lg text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600"
           />
           <textarea
             rows={2}
             placeholder="Description"
             value={newProject.description}
             onChange={(e) => setNewProject({ ...newProject, description: e.target.value })}
-            className="w-full px-4 py-2 bg-dark-bg border border-dark-border rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-purple-600"
+            className="w-full px-4 py-2 bg-dark-bg border border-dark-border rounded-lg text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600"
           />
           <input
             type="text"
             placeholder="Technologies (comma-separated)"
             value={newProject.technologies}
             onChange={(e) => setNewProject({ ...newProject, technologies: e.target.value })}
-            className="w-full px-4 py-2 bg-dark-bg border border-dark-border rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-purple-600"
+            className="w-full px-4 py-2 bg-dark-bg border border-dark-border rounded-lg text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600"
           />
           <div className="grid grid-cols-2 gap-2">
             <input
@@ -235,20 +235,20 @@ export default function StudentProfileForm({
               placeholder="Project URL"
               value={newProject.url}
               onChange={(e) => setNewProject({ ...newProject, url: e.target.value })}
-              className="w-full px-4 py-2 bg-dark-bg border border-dark-border rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-purple-600"
+              className="w-full px-4 py-2 bg-dark-bg border border-dark-border rounded-lg text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600"
             />
             <input
               type="url"
               placeholder="GitHub URL"
               value={newProject.github_url}
               onChange={(e) => setNewProject({ ...newProject, github_url: e.target.value })}
-              className="w-full px-4 py-2 bg-dark-bg border border-dark-border rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-purple-600"
+              className="w-full px-4 py-2 bg-dark-bg border border-dark-border rounded-lg text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600"
             />
           </div>
           <button
             type="button"
             onClick={addProject}
-            className="w-full px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white text-sm rounded transition-colors"
+            className="w-full px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded transition-colors"
           >
             Add Project
           </button>
@@ -258,7 +258,7 @@ export default function StudentProfileForm({
       <button
         type="submit"
         disabled={loading}
-        className="w-full px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-colors disabled:opacity-50"
+        className="w-full px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors disabled:opacity-50"
       >
         {loading ? "Saving..." : "Save Profile"}
       </button>

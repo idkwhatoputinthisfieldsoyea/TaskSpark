@@ -182,25 +182,25 @@ export default function MessagesView({
   };
 
   if (loading) {
-    return <div className="text-center text-gray-400">Loading messages...</div>;
+    return <div className="text-center text-slate-600">Loading messages...</div>;
   }
 
   // When no receiverId prop provided, render conversation list + thread
   return (
     <div className="flex flex-col md:flex-row h-[600px] bg-dark-surface border border-dark-border rounded-lg overflow-hidden">
       {/* Conversations list (left) */}
-      <div className="w-full md:w-1/3 border-r border-dark-border bg-black/30 p-4 overflow-y-auto">
-        <div className="text-sm text-gray-400 mb-4">Conversations</div>
+      <div className="w-full md:w-1/3 border-r border-dark-border bg-slate-50 p-4 overflow-y-auto">
+        <div className="text-sm text-slate-600 mb-4">Conversations</div>
         {conversations.length === 0 ? (
-          <div className="text-gray-400">No conversations yet.</div>
+          <div className="text-slate-600">No conversations yet.</div>
         ) : (
           conversations.map((c) => (
-            <button key={c.id} onClick={() => { setActiveReceiver(c.id); setMessages([]); }} className="w-full text-left py-3 px-2 rounded hover:bg-white/5 flex justify-between items-center">
+            <button key={c.id} onClick={() => { setActiveReceiver(c.id); setMessages([]); }} className="w-full text-left py-3 px-2 rounded hover:bg-slate-100 flex justify-between items-center">
               <div>
                 <div className="font-medium">{c.name || 'Unknown'}</div>
-                <div className="text-xs text-gray-400 truncate max-w-xs">{c.last}</div>
+                <div className="text-xs text-slate-600 truncate max-w-xs">{c.last}</div>
               </div>
-              <div className="text-xs text-gray-400">&gt;</div>
+              <div className="text-xs text-slate-600">&gt;</div>
             </button>
           ))
         )}
@@ -209,7 +209,7 @@ export default function MessagesView({
       <div className="flex-1 flex flex-col">
         <div className="flex-1 overflow-y-auto p-4 space-y-4">
           {messages.length === 0 ? (
-            <div className="text-center text-gray-400 py-12">No messages in this conversation.</div>
+            <div className="text-center text-slate-500 py-12">No messages in this conversation.</div>
           ) : (
             messages.map((message) => {
               // derive sender id robustly (sender_id is source-of-truth, fall back to joined sender)
@@ -217,21 +217,21 @@ export default function MessagesView({
               const isSender = !!profileId && senderId === profileId;
 
               const bubbleClass = isSender
-                ? "max-w-[70%] rounded-lg p-3 bg-purple-600 text-white shadow-md rounded-bl-lg rounded-tl-lg"
-                : "max-w-[70%] rounded-lg p-3 bg-gray-800 text-gray-100 border border-gray-700 shadow-sm rounded-br-lg rounded-tr-lg";
+                ? "max-w-[70%] rounded-lg p-3 bg-blue-600 text-white shadow-md rounded-bl-lg rounded-tl-lg"
+                : "max-w-[70%] rounded-lg p-3 bg-slate-100 text-slate-900 border border-slate-200 shadow-sm rounded-br-lg rounded-tr-lg";
 
               return (
                 <div key={message.id} className={`flex ${isSender ? "justify-end" : "justify-start"}`}>
                   <div className={bubbleClass}>
                     {/* ownership label */}
                     {isSender ? (
-                      <div className="text-xs text-right text-purple-100 font-semibold mb-1">You</div>
+                      <div className="text-xs text-right text-blue-100 font-semibold mb-1">You</div>
                     ) : (
-                      <div className="text-xs text-left text-gray-300 font-semibold mb-1">{(message.sender && (message.sender as any).full_name) || 'Unknown'}</div>
+                      <div className="text-xs text-left text-slate-600 font-semibold mb-1">{(message.sender && (message.sender as any).full_name) || 'Unknown'}</div>
                     )}
 
                     <p className="text-sm break-words">{message.content}</p>
-                    <p className={`text-xs mt-1 ${isSender ? "text-purple-200" : "text-gray-400"}`}>{formatDate(message.created_at)}</p>
+                    <p className={`text-xs mt-1 ${isSender ? "text-blue-200" : "text-slate-500"}`}>{formatDate(message.created_at)}</p>
                   </div>
                 </div>
               );
@@ -241,8 +241,8 @@ export default function MessagesView({
         </div>
         <form onSubmit={sendMessage} className="border-t border-dark-border p-4 flex-shrink-0">
           <div className="flex gap-2">
-            <input type="text" value={newMessage} onChange={(e) => setNewMessage(e.target.value)} placeholder="Type a message..." className="flex-1 px-4 py-2 bg-dark-bg border border-dark-border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-600" />
-            <button type="submit" disabled={sending || !newMessage.trim() || !(activeReceiver || receiverId) || !profileId} className="px-6 py-2 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-colors disabled:opacity-50">Send</button>
+            <input type="text" value={newMessage} onChange={(e) => setNewMessage(e.target.value)} placeholder="Type a message..." className="flex-1 px-4 py-2 bg-dark-bg border border-dark-border rounded-lg text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-600" />
+            <button type="submit" disabled={sending || !newMessage.trim() || !(activeReceiver || receiverId) || !profileId} className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors disabled:opacity-50">Send</button>
           </div>
         </form>
       </div>

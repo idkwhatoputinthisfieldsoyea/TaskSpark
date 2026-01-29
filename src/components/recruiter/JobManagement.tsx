@@ -112,17 +112,17 @@ export default function JobManagement({ recruiterId }: JobManagementProps) {
   }, [jobs]);
 
   if (loading) {
-    return <div className="text-center text-gray-400">Loading jobs...</div>;
+    return <div className="text-center text-slate-500">Loading jobs...</div>;
   }
 
   return (
     <div className="space-y-4">
       {jobs.length === 0 ? (
-        <div className="text-center text-gray-400 py-12">
+        <div className="text-center text-slate-500 py-12">
           <p className="mb-4">No jobs posted yet.</p>
           <Link
             href="/dashboard/create-job"
-            className="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-colors inline-block"
+            className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors inline-block"
           >
             Create Your First Job
           </Link>
@@ -132,12 +132,12 @@ export default function JobManagement({ recruiterId }: JobManagementProps) {
           <div key={job.id} className="relative">
             <JobCard job={job} showApplyButton={false} />
                 <div className="absolute top-6 right-6 flex gap-2 items-center">
-                  <span className="px-2 py-1 bg-dark-border text-sm rounded text-gray-200">
+                  <span className="px-2 py-1 bg-dark-border text-sm rounded text-slate-700">
                     {(applicantCounts[job.id] || 0)} applicants
                   </span>
                   <Link
                     href={`/dashboard/jobs/${job.id}/applicants`}
-                    className="px-3 py-1 bg-purple-600 hover:bg-purple-700 text-white text-sm rounded transition-colors"
+                    className="px-3 py-1 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded transition-colors"
                   >
                     View Applicants
                   </Link>

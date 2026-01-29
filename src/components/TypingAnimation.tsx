@@ -70,7 +70,7 @@ export default function TypingAnimation({
   return (
     <span className={className}>
       {currentText}
-      <span className={`inline-block w-0.5 h-8 bg-purple-400 ml-1 ${showCursor ? 'opacity-100' : 'opacity-0'} transition-opacity duration-100`}></span>
+      <span className={`inline-block w-0.5 h-8 bg-blue-400 ml-1 ${showCursor ? 'opacity-100' : 'opacity-0'} transition-opacity duration-100`}></span>
     </span>
   );
 }

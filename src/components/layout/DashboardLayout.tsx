@@ -34,8 +34,13 @@ export default function DashboardLayout({ children, role }: DashboardLayoutProps
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
+<<<<<<< HEAD
               <Link href="/dashboard" className="text-2xl font-bold text-purple-400">
                 Taskspark
+=======
+              <Link href="/dashboard" className="text-2xl font-bold text-blue-600">
+                TaskSpark
+>>>>>>> origin/test
               </Link>
               <div className="ml-10 flex space-x-4">
                 {navItems.map((item) => (
@@ -45,8 +50,8 @@ export default function DashboardLayout({ children, role }: DashboardLayoutProps
                     className={cn(
                       "px-3 py-2 rounded-md text-sm font-medium transition-colors",
                       pathname === item.href
-                        ? "bg-purple-600 text-white"
-                        : "text-gray-300 hover:bg-dark-border hover:text-white"
+                        ? "bg-blue-600 text-white"
+                        : "text-slate-600 hover:bg-slate-100 hover:text-slate-900"
                     )}
                   >
                     {item.label}

@@ -62,7 +62,7 @@ export default function CreateJobForm({ recruiterId }: CreateJobFormProps) {
           required
           value={formData.title}
           onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-          className="w-full px-4 py-2 bg-dark-bg border border-dark-border rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-600"
+          className="w-full px-4 py-2 bg-dark-bg border border-dark-border rounded-lg text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-600"
         />
       </div>
 
@@ -73,7 +73,7 @@ export default function CreateJobForm({ recruiterId }: CreateJobFormProps) {
           rows={6}
           value={formData.description}
           onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-          className="w-full px-4 py-2 bg-dark-bg border border-dark-border rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-600"
+          className="w-full px-4 py-2 bg-dark-bg border border-dark-border rounded-lg text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-600"
         />
       </div>
 
@@ -85,7 +85,7 @@ export default function CreateJobForm({ recruiterId }: CreateJobFormProps) {
           value={formData.skills_required}
           onChange={(e) => setFormData({ ...formData, skills_required: e.target.value })}
           placeholder="e.g., React, TypeScript, Node.js"
-          className="w-full px-4 py-2 bg-dark-bg border border-dark-border rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-600"
+          className="w-full px-4 py-2 bg-dark-bg border border-dark-border rounded-lg text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-600"
         />
       </div>
 
@@ -97,7 +97,7 @@ export default function CreateJobForm({ recruiterId }: CreateJobFormProps) {
             value={formData.duration}
             onChange={(e) => setFormData({ ...formData, duration: e.target.value })}
             placeholder="e.g., 3 months, Full-time"
-            className="w-full px-4 py-2 bg-dark-bg border border-dark-border rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-600"
+            className="w-full px-4 py-2 bg-dark-bg border border-dark-border rounded-lg text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-600"
           />
         </div>
 
@@ -108,7 +108,7 @@ export default function CreateJobForm({ recruiterId }: CreateJobFormProps) {
             value={formData.pay}
             onChange={(e) => setFormData({ ...formData, pay: e.target.value })}
             placeholder="e.g., $20/hour, $5000/month"
-            className="w-full px-4 py-2 bg-dark-bg border border-dark-border rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-600"
+            className="w-full px-4 py-2 bg-dark-bg border border-dark-border rounded-lg text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-600"
           />
         </div>
       </div>
@@ -120,7 +120,7 @@ export default function CreateJobForm({ recruiterId }: CreateJobFormProps) {
           value={formData.location}
           onChange={(e) => setFormData({ ...formData, location: e.target.value })}
           placeholder="e.g., San Francisco, CA"
-          className="w-full px-4 py-2 bg-dark-bg border border-dark-border rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-600"
+          className="w-full px-4 py-2 bg-dark-bg border border-dark-border rounded-lg text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-600"
         />
       </div>
 
@@ -139,7 +139,7 @@ export default function CreateJobForm({ recruiterId }: CreateJobFormProps) {
       <button
         type="submit"
         disabled={loading}
-        className="w-full px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-colors disabled:opacity-50"
+        className="w-full px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors disabled:opacity-50"
       >
         {loading ? "Creating..." : "Create Job Posting"}
       </button>
